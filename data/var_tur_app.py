@@ -1,4 +1,11 @@
-#__all__=['host_api','host_action','host_mgt','head_api','head_mgt','head_lixiang','host_coll','CONFIGS','prodNo','inter_db','head_pay','host_pay','appNo','appName']
+from app.initDevices import *
+#__all__=['devices_info_2','devices_object_2']
+
+# devices_object = InitDevices('../devices.yaml','oppo')
+# devices_object_2=devices_object
+# devices_info = devices_object.read_devices()
+# devices_info_2=devices_info
+# print('666',devices_info_2)
 
 inter_db='manage_need_loan'
 prodNo='20150801'#duoqi50121401
@@ -6,7 +13,6 @@ appNo='104'
 applist={'104':'Turrant','102':'CashTM'}
 appName=applist[appNo]
 
-#app_address='D:\\app_list\\turrant\\Test-Turrant_V1.0.2_2022-05-07-14-45-03_google.apk'
 
 CONFIGS = {
     'mex_pdl_loan': {'host':'192.168.0.60','port':3306, 'user': 'cs_wangs','password': 'cs_wangs!qw####','database': 'mex_pdl_loan'},

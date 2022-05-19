@@ -23,7 +23,7 @@ class InitDevices:
             msg = str(all_devices[self.device_name])
             OutputLog.output_log().debug(msg)
             return all_devices[self.device_name]
-    def init_devices(self,port, device_info):
+    def init_devices(self,port,device_info):
         """
         初始化设备
         :param device_info:
@@ -36,5 +36,6 @@ if __name__ == "__main__":
     OutputLog.output_log().debug("==============开始测试，连接手机==============")
     devices_object = InitDevices('../devices.yaml', 'oppo')
     devices_info = devices_object.read_devices()
-    devices = devices_object.init_devices(4723,devices_info)
-    OutputLog.output_log().debug("连接成功")  # 连接成功，开始找元素
+    print(devices_info)
+    # devices = devices_object.init_devices(4723,devices_info)
+    # OutputLog.output_log().debug("连接成功")  # 连接成功，开始找元素

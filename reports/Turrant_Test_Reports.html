@@ -154,15 +154,15 @@
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">开始时间</button>
-                <span class="text-dark">2022-05-18 01:28:49</span>
+                <span class="text-dark">2022-05-19 06:02:14</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">执行时间</button>
-                <span class="text-dark">249.71 S</span>
+                <span class="text-dark">0.00 S</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">用例总数</button>
-                <span class="text-dark">6</span>
+                <span class="text-dark">1</span>
             </li>
 
 
@@ -173,15 +173,15 @@
 
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">成功用例</button>
-                <span class="text-success">2</span>
+                <span class="text-success">0</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-warning">失败用例</button>
-                <span class="text-warning">1</span>
+                <span class="text-warning">0</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-danger">错误用例</button>
-                <span class="text-danger">3</span>
+                <span class="text-danger">1</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-secondary">跳过用例</button>
@@ -223,11 +223,7 @@
                     <select id="testClass">
                         <option>所有</option>
                         
-                            <option>Test_Install_Login_Tur</option>
-                        
                             <option>Test_Install_Login_Tur2</option>
-                        
-                            <option>Test_Install_Login_Tur3</option>
                         
                     </select>
 
@@ -255,229 +251,10 @@
             
                 <tr>
                     <td>1</td>
-                    <td class="Test_Install_Login_Tur">Test_Install_Login_Tur</td>
-                    <td>test_install_first_apply</td>
-                    <td>【turrant-android-MOTO】test_install_first_apply-授权，进件5页面，检查数据抓取正案例</td>
-                    <td>25.9s</td>
-                    
-                        <td class="text-danger">错误</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 60, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 676, in run
-    self._callTestMethod(testMethod)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 633, in _callTestMethod
-    method()
-</pre>
-                        
-
-                            <pre>  File "C:\Users\root\PycharmProjects\api_auto_test\TestCase\Test_Install_Login_Tur.py", line 74, in test_install_first_apply
-    shouquan_moto(self.driver)
-</pre>
-                        
-
-                            <pre>  File "C:\Users\root\PycharmProjects\api_auto_test\app\grab_data.py", line 37, in shouquan_moto
-    driver.find_element_by_id('com.turrant:id/agree').click()
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\webdriver.py", line 283, in find_element
-    return self.execute(RemoteCommand.FIND_ELEMENT, {'using': by, 'value': value})['value']
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
-    raise wde
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
-    super().check_response(response)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-</pre>
-                        
-
-                            <pre>selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
-</pre>
-                        
-
-                            <pre>testcase begin
-http://127.0.0.1:4725/wd/hub
-运行 192.168.20.108:5555 360 y轴|1400 x轴|360 y1轴|1300 x1轴
-appium -a 127.0.0.1 -p 4723
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>2</td>
-                    <td class="Test_Install_Login_Tur">Test_Install_Login_Tur</td>
-                    <td>test_install_login</td>
-                    <td>【turrant-android-MOTO】test_install_login-授权,登录-正案例</td>
-                    <td>33.5s</td>
-                    
-                        <td class="text-success">成功</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>testcase begin
-http://127.0.0.1:4725/wd/hub
-testcase done
-test_install_login (Test_Install_Login_Tur3.Test_Install_Login_Tur3)执行——>【错误Error】
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>3</td>
                     <td class="Test_Install_Login_Tur2">Test_Install_Login_Tur2</td>
-                    <td>test_install_first_apply</td>
-                    <td>【turrant-android-OPPO】test_install_first_apply-授权，进件5页面，检查数据抓取/埋点数据量-正案例</td>
-                    <td>2.03e+02s</td>
-                    
-                        <td class="text-warning">失败</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>testcase begin
-http://127.0.0.1:4723/wd/hub
-testcase done
-test_install_first_apply (Test_Install_Login_Tur3.Test_Install_Login_Tur3)执行——>【错误Error】
-</pre>
-                        
-
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 60, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 676, in run
-    self._callTestMethod(testMethod)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 633, in _callTestMethod
-    method()
-</pre>
-                        
-
-                            <pre>  File "C:\Users\root\PycharmProjects\api_auto_test\TestCase\Test_Install_Login_Tur2.py", line 182, in test_install_first_apply
-    self.assertEqual(cx_point_track_dtl_new(registNo),'26')
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 912, in assertEqual
-    assertion_func(first, second, msg=msg)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 905, in _baseAssertEqual
-    raise self.failureException(msg)
-</pre>
-                        
-
-                            <pre>AssertionError: (24,) != '26'
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>4</td>
-                    <td class="Test_Install_Login_Tur2">Test_Install_Login_Tur2</td>
-                    <td>test_install_login</td>
-                    <td>【turrant-android-OPPO】test_install_login-授权,登录-正案例</td>
-                    <td>35.8s</td>
-                    
-                        <td class="text-success">成功</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>testcase begin
-http://127.0.0.1:4723/wd/hub
-正在向上滑动..
-testcase done
-test_install_login (Test_Install_Login_Tur2.Test_Install_Login_Tur2)执行——>【通过】
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>5</td>
-                    <td class="Test_Install_Login_Tur3">Test_Install_Login_Tur3</td>
-                    <td>test_install_first_apply</td>
-                    <td>【turrant-android-HONGMI】test_install_first_apply-授权，进件5页面，检查数据抓取正案例</td>
-                    <td>26.1s</td>
+                    <td>setUpClass </td>
+                    <td>None</td>
+                    <td>0</td>
                     
                         <td class="text-danger">错误</td>
                     
@@ -495,163 +272,17 @@ test_install_login (Test_Install_Login_Tur2.Test_Install_Login_Tur2)执行——
 </pre>
                         
 
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 60, in testPartExecutor
-    yield
+                            <pre>  File "C:\Python38\lib\unittest\suite.py", line 163, in _handleClassSetUp
+    setUpClass()
 </pre>
                         
 
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 676, in run
-    self._callTestMethod(testMethod)
+                            <pre>  File "C:\Users\root\PycharmProjects\app_test\TestCase\Test_Install_Login_Tur2.py", line 29, in setUpClass
+    adb_connect(devices_info['udid'])                      #连接wifi调试
 </pre>
                         
 
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 633, in _callTestMethod
-    method()
-</pre>
-                        
-
-                            <pre>  File "C:\Users\root\PycharmProjects\api_auto_test\TestCase\Test_Install_Login_Tur3.py", line 74, in test_install_first_apply
-    shouquan_hongmi(self.driver)
-</pre>
-                        
-
-                            <pre>  File "C:\Users\root\PycharmProjects\api_auto_test\app\grab_data.py", line 51, in shouquan_hongmi
-    driver.find_element_by_id('com.turrant:id/agree').click()
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\webdriver.py", line 283, in find_element
-    return self.execute(RemoteCommand.FIND_ELEMENT, {'using': by, 'value': value})['value']
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
-    raise wde
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
-    super().check_response(response)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-</pre>
-                        
-
-                            <pre>selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
-</pre>
-                        
-
-                            <pre>testcase begin
-http://127.0.0.1:4727/wd/hub
-appium -a 127.0.0.1 -p 4725
-</pre>
-                        
-                        
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>6</td>
-                    <td class="Test_Install_Login_Tur3">Test_Install_Login_Tur3</td>
-                    <td>test_install_login</td>
-                    <td>【turrant-android-HONGMI】test_install_login-授权,登录-正案例</td>
-                    <td>19.1s</td>
-                    
-                        <td class="text-danger">错误</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 60, in testPartExecutor
-    yield
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 676, in run
-    self._callTestMethod(testMethod)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\case.py", line 633, in _callTestMethod
-    method()
-</pre>
-                        
-
-                            <pre>  File "C:\Users\root\PycharmProjects\api_auto_test\TestCase\Test_Install_Login_Tur3.py", line 63, in test_install_login
-    shouquan_hongmi(self.driver)
-</pre>
-                        
-
-                            <pre>  File "C:\Users\root\PycharmProjects\api_auto_test\app\grab_data.py", line 51, in shouquan_hongmi
-    driver.find_element_by_id('com.turrant:id/agree').click()
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\webdriver.py", line 283, in find_element
-    return self.execute(RemoteCommand.FIND_ELEMENT, {'using': by, 'value': value})['value']
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
-    raise wde
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
-    super().check_response(response)
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-</pre>
-                        
-
-                            <pre>selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
-</pre>
-                        
-
-                            <pre>testcase begin
-http://127.0.0.1:4727/wd/hub
-正在向上滑动..
-testcase done
-test_install_first_apply (Test_Install_Login_Tur.Test_Install_Login_Tur)执行——>【错误Error】
+                            <pre>TypeError: 'NoneType' object is not subscriptable
 </pre>
                         
                         
@@ -787,9 +418,9 @@ test_install_first_apply (Test_Install_Login_Tur.Test_Install_Login_Tur)执行�
                     show: false
                 },
                 data: [
-                    {value: 2, name: '通过'},
-                    {value: 1, name: '失败'},
-                    {value: 3, name: '错误'},
+                    {value: 0, name: '通过'},
+                    {value: 0, name: '失败'},
+                    {value: 1, name: '错误'},
                     {value: 0, name: '跳过'}
                 ]
             }
@@ -809,8 +440,8 @@ test_install_first_apply (Test_Install_Login_Tur.Test_Install_Login_Tur)执行�
             {
                 name: '测试结果',
                 type: 'gauge',
-                detail: {formatter: '33.33%'},
-                data: [{value: '33.33', name: '用例通过率'}],
+                detail: {formatter: '0.00%'},
+                data: [{value: '0.00', name: '用例通过率'}],
                 axisLine: {
                     lineStyle: {
                         color: [

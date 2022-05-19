@@ -12,10 +12,7 @@ PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
 
-port=4723   #appium和driver端口号
-devices_object = InitDevices('../devices.yaml', 'oppo')
-devices_info = devices_object.read_devices()
-
+port = 4723  # appium和driver端口号
 #增加重试连接次数
 requests.DEFAULT_RETRIES = 5
 #关闭多余的链接：requests使用了urllib3库，默认的http connection是keep-alive的，requests设置False关闭
@@ -24,8 +21,11 @@ s.keep_alive = False
 
 class Test_Install_Login_Tur2(unittest.TestCase):
     @classmethod
-    def setUpClass(cls):  #在所有用例执行之前运行的
+    def setUpClass(cls):
         print('我是setUpclass，我位于所有用例的开始')
+        devices_object = InitDevices('../devices.yaml','oppo')
+        devices_info = devices_object.read_devices()
+        print(devices_info)
         adb_connect(devices_info['udid'])                      #连接wifi调试
         huanxing_screen(devices_info['udid'])                  #唤醒屏幕
         sildes(devices_info['udid'],360, 1400, 360, 1300, 50)  #adb向上滑屏
@@ -35,10 +35,25 @@ class Test_Install_Login_Tur2(unittest.TestCase):
     def setUp(self):
         '''每条testcase执行前初始化'''
         print('testcase setUp')
+        devices_object = InitDevices('../devices.yaml', 'oppo')
+        devices_info = devices_object.read_devices()
         self.driver=devices_object.init_devices(port, devices_info)
-        # 设置隐式等待为 10s
+        #设置隐式等待为 10s,一旦设置了隐式等待，它则会在整个Web Driver对象的实例声明周期中。
         self.driver.implicitly_wait(10)
         swipeup(self.driver,1000)
+    def test_jinzhi_shouquan(self):
+        '''【turrant-android-OPPO】test_jinzhi_shouquan-禁止授权-正案例'''
+        self.driver.find_element_by_id('com.turrant:id/agree').click()
+        time.sleep(3)
+        self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
+        time.sleep(3)
+        self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
+        time.sleep(3)
+        self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
+        time.sleep(3)
+        self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
+        time.sleep(3)
+        self.assertTrue(self.driver.find_element_by_id('com.turrant:id/tt_msg').is_displayed())
     def test_install_login(self):
         '''【turrant-android-OPPO】test_install_login-授权,登录-正案例'''
         shouquan_oppo(self.driver)
@@ -153,7 +168,7 @@ class Test_Install_Login_Tur2(unittest.TestCase):
         time.sleep(30)
         self.driver.find_element_by_id('com.turrant:id/bind_bank').click() #提交成功后，点击ok按钮
         time.sleep(5)
-        self.driver.find_element_by_id('com.turrant:id/tv_title').is_displayed()#检查是否被拒绝
+        #self.driver.find_element_by_id('com.turrant:id/tv_title').is_displayed()#检查是否被拒绝
         grab_data=cx_grab_data(registNo)
         for i in range(len(grab_data)):
             self.assertIsNotNone(grab_data[i])
@@ -165,9 +180,11 @@ class Test_Install_Login_Tur2(unittest.TestCase):
         print("testcase done")
     @classmethod
     def tearDownClass(cls):
+        devices_object = InitDevices('../devices.yaml', 'oppo')
+        devices_info = devices_object.read_devices()
         adb_disconnect(devices_info['udid'])
         appium_stop(port)
         print('我是tearDownClass，我位于所有用例运行的结束')
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()
