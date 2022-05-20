@@ -19,6 +19,7 @@ def cx_point_track_dtl_new(registNo):
     sql="select count(1) from point_track_dtl_new  where PHONE='"+registNo+"';"
     num=DataBase('new_point').get_one(sql)
     return num
+
 def shouquan_oppo(driver):
     driver.find_element_by_id('com.turrant:id/agree').click()
     time.sleep(3)
@@ -33,6 +34,7 @@ def shouquan_oppo(driver):
     driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
     time.sleep(3)
     driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
+
 def shouquan_moto(driver):
     time.sleep(5)
     driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_foreground_only_button').click()
