@@ -1,8 +1,6 @@
-# -*- coding:utf-8 -*-
-# __author__ = "Cc"
 import logging
 import time
-
+from data.common_path import *
 
 class OutputLog:
     critical = logging.CRITICAL  # 级别最高，什么也不输出
@@ -18,8 +16,8 @@ class OutputLog:
         if not my_logging.handlers:
             local_time = time.localtime()
             file_name1 = time.strftime('%Y-%m-%d', local_time)
-            file_name2 = r"Logging\\"
-            file_name = file_name2 + file_name1 + ".log"
+            file_name2 = log_path
+            file_name = file_name2 +'/'+ file_name1 + ".log"
             file_handler = logging.FileHandler(file_name, "a", encoding="utf-8")  # 输出日志到磁盘文件
             file_handler.setLevel(log_level)
             formatter = logging.Formatter("%(asctime)s--%(levelname)s--%(process)d--"

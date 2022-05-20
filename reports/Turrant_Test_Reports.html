@@ -154,7 +154,7 @@
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">开始时间</button>
-                <span class="text-dark">2022-05-19 06:02:14</span>
+                <span class="text-dark">2022-05-19 23:16:16</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">执行时间</button>
@@ -162,7 +162,7 @@
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">用例总数</button>
-                <span class="text-dark">1</span>
+                <span class="text-dark">0</span>
             </li>
 
 
@@ -181,7 +181,7 @@
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-danger">错误用例</button>
-                <span class="text-danger">1</span>
+                <span class="text-danger">0</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-secondary">跳过用例</button>
@@ -223,8 +223,6 @@
                     <select id="testClass">
                         <option>所有</option>
                         
-                            <option>Test_Install_Login_Tur2</option>
-                        
                     </select>
 
                 </th>
@@ -248,46 +246,6 @@
             </tr>
             </thead>
             <tbody>
-            
-                <tr>
-                    <td>1</td>
-                    <td class="Test_Install_Login_Tur2">Test_Install_Login_Tur2</td>
-                    <td>setUpClass </td>
-                    <td>None</td>
-                    <td>0</td>
-                    
-                        <td class="text-danger">错误</td>
-                    
-                    <td>
-                        <button type="button" class="btn btn-success btn_info">查看详情</button>
-                    </td>
-                </tr>
-
-                <tr class="test_log">
-
-                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
-                        
-
-                            <pre>Traceback (most recent call last):
-</pre>
-                        
-
-                            <pre>  File "C:\Python38\lib\unittest\suite.py", line 163, in _handleClassSetUp
-    setUpClass()
-</pre>
-                        
-
-                            <pre>  File "C:\Users\root\PycharmProjects\app_test\TestCase\Test_Install_Login_Tur2.py", line 29, in setUpClass
-    adb_connect(devices_info['udid'])                      #连接wifi调试
-</pre>
-                        
-
-                            <pre>TypeError: 'NoneType' object is not subscriptable
-</pre>
-                        
-                        
-                    </td>
-                </tr>
             
 
             </tbody>
@@ -420,7 +378,7 @@
                 data: [
                     {value: 0, name: '通过'},
                     {value: 0, name: '失败'},
-                    {value: 1, name: '错误'},
+                    {value: 0, name: '错误'},
                     {value: 0, name: '跳过'}
                 ]
             }
@@ -440,8 +398,8 @@
             {
                 name: '测试结果',
                 type: 'gauge',
-                detail: {formatter: '0.00%'},
-                data: [{value: '0.00', name: '用例通过率'}],
+                detail: {formatter: '0%'},
+                data: [{value: '0', name: '用例通过率'}],
                 axisLine: {
                     lineStyle: {
                         color: [

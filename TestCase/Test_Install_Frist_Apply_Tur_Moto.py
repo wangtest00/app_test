@@ -7,33 +7,28 @@ from app.grab_data import *
 from app.appium_adb import *
 from app.swipe_test import *
 from app.initDevices import *
+from data.common_path import *
 
-PATH = lambda p: os.path.abspath(
-    os.path.join(os.path.dirname(__file__), p)
-)
-port=4725  #appium和driver端口号
-devices_object = InitDevices('../devices.yaml', 'moto')
-devices_info = devices_object.read_devices()
 #增加重试连接次数
 requests.DEFAULT_RETRIES = 5
 #关闭多余的链接：requests使用了urllib3库，默认的http connection是keep-alive的，requests设置False关闭
 s = requests.session()
 s.keep_alive = False
 
-class Test_Install_Login_Tur(unittest.TestCase):
+class Test_Install_Frist_Apply_Tur_Moto(unittest.TestCase):
     @classmethod
     def setUpClass(cls):  # 在所有用例执行之前运行的
-        print('我是setUpclass，我位于所有用例的开始')
-        adb_connect(devices_info['udid'])     # 连接wifi调试
-        huanxing_screen(devices_info['udid']) # 唤醒屏幕
-        #sildes(devices_info['udid'], 360, 1400, 360, 1300, 50)          # adb向上滑屏
-        uninstall_app(devices_info['udid'], devices_info['appPackage'])  # 预先卸载app包
-        appium_start('127.0.0.1', port)  # 启动appium服务
+        print('我是setUpclass，我位于所有用例的开始（只执行一次）')
+        adb_connect(devices_info_moto['udid'])     # 连接wifi调试
+        huanxing_screen(devices_info_moto['udid']) # 唤醒屏幕
+        #sildes(devices_info_moto['udid'], 360, 1400, 360, 1300, 50)          # adb向上滑屏
+        uninstall_app(devices_info_moto['udid'], devices_info_moto['appPackage'])  # 预先卸载app包
+        appium_start('127.0.0.1', port_moto)  # 启动appium服务
 
     def setUp(self):
         '''每条testcase执行前初始化'''
         print('testcase setUp')
-        self.driver = devices_object.init_devices(port, devices_info)
+        self.driver = devices_object_moto.init_devices(port_moto, devices_info_moto)
         # 设置隐式等待为 10s
         self.driver.implicitly_wait(10)
     def test_install_login(self):
@@ -45,7 +40,7 @@ class Test_Install_Login_Tur(unittest.TestCase):
         input2 = self.driver.find_element_by_id('com.turrant:id/code')
         input2.send_keys('5555')
         self.driver.find_element_by_id('com.turrant:id/login_btn').click()
-    def test_install_first_apply(self):
+    def test_install_frist_apply(self):
         '''【turrant-android-MOTO】test_install_first_apply-授权，进件5页面，检查数据抓取正案例'''
         shouquan_moto(self.driver)
         time.sleep(3)
@@ -157,9 +152,9 @@ class Test_Install_Login_Tur(unittest.TestCase):
         print("testcase done")
     @classmethod
     def tearDownClass(cls):  # 在所有用例都执行完之后运行的
-        adb_disconnect(devices_info['udid'])
-        appium_stop(port)
-        print('我是tearDownClass，我位于多有用例运行的结束')
+        adb_disconnect(devices_info_moto['udid'])
+        appium_stop(port_moto)
+        print('我是tearDownClass，我位于多有用例运行的结束（只执行一次）')
 
 if __name__ == '__main__':
     unittest.main()

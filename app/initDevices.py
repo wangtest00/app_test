@@ -1,8 +1,9 @@
 # 初始化设备
 from appium import webdriver
 import yaml
-from app.Logging.outputLog import OutputLog
+from logs.outputLog import OutputLog
 from app.appium_adb import *
+from data.common_path import *
 
 class InitDevices:
     def __init__(self, file_name, device_name):
@@ -34,8 +35,7 @@ class InitDevices:
 
 if __name__ == "__main__":
     OutputLog.output_log().debug("==============开始测试，连接手机==============")
-    devices_object = InitDevices('../devices.yaml', 'oppo')
+    devices_object = InitDevices(devices_path+'/devices.yaml', 'oppo')
     devices_info = devices_object.read_devices()
-    print(devices_info)
     # devices = devices_object.init_devices(4723,devices_info)
     # OutputLog.output_log().debug("连接成功")  # 连接成功，开始找元素
