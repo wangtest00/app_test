@@ -1,11 +1,11 @@
 from appium import webdriver
 import unittest,os,time,requests
 from daiqian.base_lp import *
-from app.auth_tur import *
+from daiqian.auth_cashtm import *
 from app.grab_data import *
 from app.appium_adb import *
 from app.swipe_test import *
-from data.common_path_tur import *
+from data.common_path import *
 from data.var_cashtm import *
 
 #增加重试连接次数
@@ -18,7 +18,6 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print('我是setUpclass，我位于所有用例的开始（只执行一次）')
-        print('222222222=', devices_info_oppo)
         adb_connect(devices_info_oppo['udid'])                      #连接wifi调试
         huanxing_screen(devices_info_oppo['udid'])                  #唤醒屏幕
         sildes(devices_info_oppo['udid'],360, 1400, 360, 1000, 500)  #adb向上滑屏
@@ -27,14 +26,13 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
     def setUp(self):
         '''每条testcase执行前初始化'''
         print('testcase begin')
-        print(devices_info_oppo)
         self.driver=devices_object_oppo.init_devices(port_oppo, devices_info_oppo)
         #设置隐式等待为 10s,一旦设置了隐式等待，它则会在整个Web Driver对象的实例声明周期中。
         self.driver.implicitly_wait(10)
         swipeup(self.driver,1000)
     def test_jinzhi_shouquan(self):
         '''【cashTm-android-OPPO】test_jinzhi_shouquan-禁止授权-正案例'''
-        self.driver.find_element_by_id('com.turrant:id/agree').click()
+        self.driver.find_element_by_id('com.cashtm.andriod:id/agree').click()
         time.sleep(3)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
         time.sleep(3)
@@ -44,43 +42,45 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         time.sleep(3)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
         time.sleep(3)
-        self.assertTrue(self.driver.find_element_by_id('com.turrant:id/tt_msg').is_displayed())
+        self.assertTrue(self.driver.find_element_by_id('com.cashtm.andriod:id/tt_msg').is_displayed())
     def test_install_login(self):
         '''【cashTm-android-OPPO】test_install_login-授权,登录-正案例'''
-        shouquan_oppo(self.driver)
-        time.sleep(3)
-        input = self.driver.find_element_by_id('com.turrant:id/phone')
-        input.send_keys('8686863333')
-        input2 = self.driver.find_element_by_id('com.turrant:id/code')
-        input2.send_keys('8888')
-        self.driver.find_element_by_id('com.turrant:id/login_btn').click()
+        shouquan_oppo_cashtm(self.driver)
+        time.sleep(5)
+        self.driver.find_element_by_id('com.cashtm.andriod:id/phone').send_keys('8686863333')
+        self.driver.find_element_by_id('com.cashtm.andriod:id/send_code').click()
+        time.sleep(2)
+        self.assertNotEqual(self.driver.find_element_by_id('com.cashtm.andriod:id/send_code').get_attribute('text'),'Get OTP')
+        self.driver.find_element_by_id('com.cashtm.andriod:id/code').send_keys('8888')
+        time.sleep(1)
+        self.driver.find_element_by_id('com.cashtm.andriod:id/login_btn').click()
     def test_install_first_apply(self):
         '''【cashTm-android-OPPO】test_install_first_apply-授权，进件5页面，检查数据抓取/埋点数据量-正案例'''
-        shouquan_oppo(self.driver)
+        shouquan_oppo_cashtm(self.driver)
         time.sleep(3)
         registNo=str(random.randint(7000000000,9999999999)) #10位随机数作为手机号
         print(registNo)
-        insert_white_list(registNo)
-        self.driver.find_element_by_id('com.turrant:id/phone').send_keys(registNo)
+        insert_white_list(inter_db,registNo)
+        self.driver.find_element_by_id('com.cashtm.andriod:id/phone').send_keys(registNo)
         time.sleep(1)
         code = compute_code(registNo)
-        self.driver.find_element_by_id('com.turrant:id/code').send_keys(code)
-        self.driver.find_element_by_id('com.turrant:id/login_btn').click()
+        self.driver.find_element_by_id('com.cashtm.andriod:id/code').send_keys(code)
+        self.driver.find_element_by_id('com.cashtm.andriod:id/login_btn').click()
         self.driver.implicitly_wait(10)
-        self.driver.find_element_by_id('com.turrant:id/loan_btn').click()  # step1点击申请贷款按钮,进入实名认证页面
+        self.driver.find_element_by_id('com.cashtm.andriod:id/loan_btn').click()  # step1点击申请贷款按钮,进入实名认证页面
         self.driver.find_element_by_xpath(xp1).send_keys('wang shuang')
         self.driver.find_element_by_xpath(xp2).send_keys('test')
         self.driver.find_element_by_xpath(xp3).send_keys('android')
         self.driver.find_element_by_xpath(xp4).click()
         time.sleep(5)
-        self.driver.find_element_by_id("com.turrant:id/textView2").click()#点击ok
+        self.driver.find_element_by_id("com.cashtm.andriod:id/textView2").click()#点击ok
         self.driver.find_element_by_xpath(xp5).click()                    #点击education
         time.sleep(3)
-        self.driver.find_element_by_id('com.turrant:id/textView2').click()#点击ok
+        self.driver.find_element_by_id('com.cashtm.andriod:id/textView2').click()#点击ok
         time.sleep(3)
         self.driver.find_element_by_xpath(xp6).click()     #marital status婚姻状况
         time.sleep(3)
-        self.driver.find_element_by_id('com.turrant:id/textView2').click()#点击ok
+        self.driver.find_element_by_id('com.cashtm.andriod:id/textView2').click()#点击ok
         swipeup(self.driver,1000)
         self.driver.implicitly_wait(10)
         curtNo=certlist()
@@ -89,29 +89,29 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         self.driver.find_element_by_xpath(xp9).send_keys(curtNo[1])  #pan卡
         self.driver.find_element_by_xpath(xp10).click()  # 选择语言
         time.sleep(3)
-        self.driver.find_element_by_id('com.turrant:id/textView2').click()
+        self.driver.find_element_by_id('com.cashtm.andriod:id/textView2').click()
         time.sleep(3)
         self.driver.find_element_by_xpath(xp11).click()  #step2点击下一步,进入kyc页面
         time.sleep(3)
-        self.driver.find_element_by_id('com.turrant:id/card_1').click()
-        self.driver.find_element_by_id('com.turrant:id/tt_select_album').click()
+        self.driver.find_element_by_id('com.cashtm.andriod:id/card_1').click()
+        self.driver.find_element_by_id('com.cashtm.andriod:id/tt_select_album').click()
         self.driver.find_element_by_xpath(xp12).click()
         self.driver.find_element_by_xpath(xp13).click()
-        self.driver.find_element_by_id('com.turrant:id/card_2').click()
-        self.driver.find_element_by_id('com.turrant:id/tt_select_album').click()
+        self.driver.find_element_by_id('com.cashtm.andriod:id/card_2').click()
+        self.driver.find_element_by_id('com.cashtm.andriod:id/tt_select_album').click()
         self.driver.find_element_by_xpath(xp12).click()
         self.driver.find_element_by_xpath(xp13).click()
-        self.driver.find_element_by_id('com.turrant:id/card_3').click()
-        self.driver.find_element_by_id('com.turrant:id/tt_select_album').click()
+        self.driver.find_element_by_id('com.cashtm.andriod:id/card_3').click()
+        self.driver.find_element_by_id('com.cashtm.andriod:id/tt_select_album').click()
         self.driver.find_element_by_xpath(xp12).click()
         self.driver.find_element_by_xpath(xp13).click()
-        self.driver.find_element_by_id('com.turrant:id/card_4').click()
+        self.driver.find_element_by_id('com.cashtm.andriod:id/card_4').click()
         time.sleep(3)
         self.driver.find_element_by_id('com.oppo.camera:id/shutter_button').click()#点击拍照
         time.sleep(3)
         self.driver.find_element_by_id('com.oppo.camera:id/done_button').click() #点击确认
         time.sleep(3)
-        self.driver.find_element_by_id('com.turrant:id/next').click() #step3点击下一步，进入家庭地址信息页面
+        self.driver.find_element_by_id('com.cashtm.andriod:id/next').click() #step3点击下一步，进入家庭地址信息页面
         time.sleep(5)
         self.driver.find_element_by_xpath(xp14).send_keys('123456789')
         self.driver.find_element_by_xpath(xp15).send_keys('this is home address')
@@ -121,7 +121,7 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         self.driver.find_element_by_xpath(xp18).click()
         time.sleep(3)
         self.driver.find_element_by_id(id19).click()
-        self.driver.find_element_by_id('com.turrant:id/next').click()#step4点击下一步,进入工作信息证明页面
+        self.driver.find_element_by_id('com.cashtm.andriod:id/next').click()#step4点击下一步,进入工作信息证明页面
         time.sleep(5)
         self.driver.find_element_by_xpath(xp20).click()
         self.driver.find_element_by_id(id21).click()
@@ -141,7 +141,7 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         # self.driver.find_element_by_id(id33).click()
         # self.driver.find_element_by_xpath(xp34).click()
         # self.driver.find_element_by_xpath(xp35).click()
-        self.driver.find_element_by_id('com.turrant:id/next').click()  #step5点击下一步，进入联系人信息页面
+        self.driver.find_element_by_id('com.cashtm.andriod:id/next').click()  #step5点击下一步，进入联系人信息页面
         time.sleep(5)
         self.driver.find_element_by_id(id36).click()
         self.driver.find_element_by_id(id37).click()
@@ -151,15 +151,15 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         time.sleep(1)
         self.driver.swipe(360, 1400, 360, 1300, 1000)
         time.sleep(1)
-        self.driver.find_element_by_id('com.turrant:id/textView2').click() #点击ok
+        self.driver.find_element_by_id('com.cashtm.andriod:id/textView2').click() #点击ok
         self.driver.find_element_by_xpath(xp42).send_keys('test android two')
         self.driver.find_element_by_xpath(xp43).send_keys('7474666333')
         swipeup(self.driver,1000)
-        self.driver.find_element_by_id('com.turrant:id/next').click() #点击提交申请
+        self.driver.find_element_by_id('com.cashtm.andriod:id/next').click() #点击提交申请
         time.sleep(30)
-        self.driver.find_element_by_id('com.turrant:id/bind_bank').click() #提交成功后，点击ok按钮
+        self.driver.find_element_by_id('com.cashtm.andriod:id/bind_bank').click() #提交成功后，点击ok按钮
         time.sleep(5)
-        #self.driver.find_element_by_id('com.turrant:id/tv_title').is_displayed()#检查是否被拒绝
+        #self.driver.find_element_by_id('com.cashtm.andriod:id/tv_title').is_displayed()#检查是否被拒绝
         grab_data=cx_grab_data(registNo)
         for i in range(len(grab_data)):
             self.assertIsNotNone(grab_data[i])

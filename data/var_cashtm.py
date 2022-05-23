@@ -6,15 +6,15 @@ applist={'104':'Turrant','102':'CashTM'}
 appNo='102'
 appName=applist[appNo]
 
-# port_oppo = 4723  # appium和driver端口号
-# devices_object_oppo = InitDevices(devices_path+'/devices_cashTm.yaml', 'oppo')
-# devices_info_oppo = devices_object_oppo.read_devices()
-# port_moto = 4725
-# devices_object_moto = InitDevices(devices_path+'/devices_cashTm.yaml', 'moto')
-# devices_info_moto = devices_object_moto.read_devices()
-# port_hongmi = 4727
-# devices_object_hongmi = InitDevices(devices_path+'/devices_cashTm.yaml', 'hongmi')
-# devices_info_hongmi = devices_object_hongmi.read_devices()
+port_oppo = 4723  # appium和driver端口号
+devices_object_oppo = InitDevices(devices_path+'/devices_cashTm.yaml', 'oppo')
+devices_info_oppo = devices_object_oppo.read_devices()
+port_moto = 4725
+devices_object_moto = InitDevices(devices_path+'/devices_cashTm.yaml', 'moto')
+devices_info_moto = devices_object_moto.read_devices()
+port_hongmi = 4727
+devices_object_hongmi = InitDevices(devices_path+'/devices_cashTm.yaml', 'hongmi')
+devices_info_hongmi = devices_object_hongmi.read_devices()
 CONFIGS = {
     'mex_pdl_loan': {'host':'192.168.0.60','port':3306, 'user': 'cs_wangs','password': 'cs_wangs!qw####','database': 'mex_pdl_loan'},
     'manage_need_loan': {'host':'13.235.214.155','port':3306, 'user': 'cs_wangs','password': 'cs_wangs!qw####','database': 'manage_need_loan'},

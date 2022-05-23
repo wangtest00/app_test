@@ -1,6 +1,6 @@
 import subprocess
 import sys,os
-from data.common_path_tur import *
+from data.common_path import *
 
 def appium_start(host, port):
     cmd = 'appium -a '+host+' -p '+str(port)

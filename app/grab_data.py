@@ -34,7 +34,20 @@ def shouquan_oppo(driver):
     driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
     time.sleep(3)
     driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
-
+def shouquan_oppo_cashtm(driver):
+    driver.find_element_by_id('com.cashtm.andriod:id/agree').click()
+    time.sleep(3)
+    driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
+    time.sleep(1)
+    driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_foreground_only_button').click()
+    time.sleep(1)
+    driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
+    time.sleep(1)
+    driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
+    # time.sleep(3)
+    # driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
+    # time.sleep(3)
+    # driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
 def shouquan_moto(driver):
     time.sleep(5)
     driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_foreground_only_button').click()

@@ -1,13 +1,13 @@
 from appium import webdriver
 import unittest,os,time,requests
 from daiqian.base_lp import *
-from app.auth_tur import *
+from daiqian.auth_tur import *
 from data.var_turrant import *
 from app.grab_data import *
 from app.appium_adb import *
 from app.swipe_test import *
 from app.initDevices import *
-from data.common_path_tur import *
+from data.common_path import *
 
 #增加重试连接次数
 # requests.DEFAULT_RETRIES = 2
@@ -19,7 +19,6 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print('我是setUpclass，我位于所有用例的开始（只执行一次）')
-        print('1111111=',devices_info_oppo)
         adb_connect(devices_info_oppo['udid'])                      #连接wifi调试
         huanxing_screen(devices_info_oppo['udid'])                  #唤醒屏幕
         sildes(devices_info_oppo['udid'],360, 1400, 360, 1300, 50)  #adb向上滑屏
@@ -28,7 +27,6 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
     def setUp(self):
         '''每条testcase执行前初始化'''
         print('testcase begin')
-        print(devices_info_oppo)
         self.driver=devices_object_oppo.init_devices(port_oppo, devices_info_oppo)
         #设置隐式等待为 10s,一旦设置了隐式等待，它则会在整个Web Driver对象的实例声明周期中。
         self.driver.implicitly_wait(10)
