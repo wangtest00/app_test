@@ -2,7 +2,7 @@ from appium import webdriver
 import unittest,requests,time
 from daiqian.base_lp import *
 from app.auth_tur import *
-from data.var_tur_app import *
+from data.var_turrant import *
 from app.grab_data import *
 from app.appium_adb import *
 from app.swipe_test import *

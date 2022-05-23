@@ -33,9 +33,10 @@ class InitDevices:
         return webdriver.Remote("http://127.0.0.1:"+str(port)+"/wd/hub", device_info)
 
 
-if __name__ == "__main__":
-    OutputLog.output_log().debug("==============开始测试，连接手机==============")
-    devices_object = InitDevices(devices_path+'/devices.yaml', 'oppo')
-    devices_info = devices_object.read_devices()
-    # devices = devices_object.init_devices(4723,devices_info)
-    # OutputLog.output_log().debug("连接成功")  # 连接成功，开始找元素
+# if __name__ == "__main__":
+#     OutputLog.output_log().debug("==============开始测试，连接手机==============")
+#     devices_object = InitDevices(devices_path+'/devices_tur.yaml', 'oppo')
+#     devices_info = devices_object.read_devices()
+#     print(devices_info)
+#     devices = devices_object.init_devices(4723,devices_info)
+#     # OutputLog.output_log().debug("连接成功")  # 连接成功，开始找元素

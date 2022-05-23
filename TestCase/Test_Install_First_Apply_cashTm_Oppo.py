@@ -2,12 +2,11 @@ from appium import webdriver
 import unittest,os,time,requests
 from daiqian.base_lp import *
 from app.auth_tur import *
-from data.var_turrant import *
 from app.grab_data import *
 from app.appium_adb import *
 from app.swipe_test import *
-from app.initDevices import *
 from data.common_path_tur import *
+from data.var_cashtm import *
 
 #增加重试连接次数
 # requests.DEFAULT_RETRIES = 2
@@ -15,14 +14,14 @@ from data.common_path_tur import *
 # s = requests.session()
 # s.keep_alive = False
 
-class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
+class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print('我是setUpclass，我位于所有用例的开始（只执行一次）')
-        print('1111111=',devices_info_oppo)
+        print('222222222=', devices_info_oppo)
         adb_connect(devices_info_oppo['udid'])                      #连接wifi调试
         huanxing_screen(devices_info_oppo['udid'])                  #唤醒屏幕
-        sildes(devices_info_oppo['udid'],360, 1400, 360, 1300, 50)  #adb向上滑屏
+        sildes(devices_info_oppo['udid'],360, 1400, 360, 1000, 500)  #adb向上滑屏
         uninstall_app(devices_info_oppo['udid'],devices_info_oppo['appPackage'])#预先卸载app包
         appium_start('127.0.0.1', port_oppo)                        #启动appium服务
     def setUp(self):
@@ -34,7 +33,7 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         self.driver.implicitly_wait(10)
         swipeup(self.driver,1000)
     def test_jinzhi_shouquan(self):
-        '''【turrant-android-OPPO】test_jinzhi_shouquan-禁止授权-正案例'''
+        '''【cashTm-android-OPPO】test_jinzhi_shouquan-禁止授权-正案例'''
         self.driver.find_element_by_id('com.turrant:id/agree').click()
         time.sleep(3)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
@@ -47,7 +46,7 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         time.sleep(3)
         self.assertTrue(self.driver.find_element_by_id('com.turrant:id/tt_msg').is_displayed())
     def test_install_login(self):
-        '''【turrant-android-OPPO】test_install_login-授权,登录-正案例'''
+        '''【cashTm-android-OPPO】test_install_login-授权,登录-正案例'''
         shouquan_oppo(self.driver)
         time.sleep(3)
         input = self.driver.find_element_by_id('com.turrant:id/phone')
@@ -56,7 +55,7 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         input2.send_keys('8888')
         self.driver.find_element_by_id('com.turrant:id/login_btn').click()
     def test_install_first_apply(self):
-        '''【turrant-android-OPPO】test_install_first_apply-授权，进件5页面，检查数据抓取/埋点数据量-正案例'''
+        '''【cashTm-android-OPPO】test_install_first_apply-授权，进件5页面，检查数据抓取/埋点数据量-正案例'''
         shouquan_oppo(self.driver)
         time.sleep(3)
         registNo=str(random.randint(7000000000,9999999999)) #10位随机数作为手机号
@@ -176,5 +175,5 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         appium_stop(port_oppo)
         print('我是tearDownClass，我位于所有用例运行的结束（只执行一次）')
 
-# if __name__ == '__main__':
-#     unittest.main()
+if __name__ == '__main__':
+    unittest.main()

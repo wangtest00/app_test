@@ -5,7 +5,6 @@ Created on 2018-11-26
 '''
 import time
 import pymysql
-from data.var_tur_app import *
 from public.date_calculate import *
 
 class DataBase():
@@ -85,6 +84,3 @@ class DataBase():
 
 
 #loanAmt='{0:f}'.format(t[0])#decimal转字符串
-
-if __name__ == '__main__':
-    DataBase(tez_db).call_daily_important_batch('20220208','20220208')

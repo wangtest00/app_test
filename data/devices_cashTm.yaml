@@ -1,0 +1,43 @@
+oppo:
+  #应用启动需要的Android Activity名称
+  appActivity: com.cashtm.andriod.ui.activity.LaunchActivity
+  #应用的包名
+  appPackage: com.cashtm.andriod
+  #autoGrantPermissions: true
+  #automationName: UiAutomator2
+  app: D:/app_list/cashTM/CashTm_V2.6.7_2022-04-20_google.apk
+  # 设备名称
+  deviceName: OPPO
+  # 设备系统版本号
+  platFormVersion: 11
+  # 设备系统
+  platformName: Android
+  resetKeyboard: false
+  #是否不重置
+  noReset: false
+  #使用Unicode输入法,中文字符需要设置为True
+  unicodeKeyboard: false
+  #连接的物理设备的唯一设备标识,如果连接真机测试，必须指定设备的id（在adb devides里或设置里查看)
+  udid: 192.168.20.136:5555
+moto:
+  appActivity: com.turrant.ui.activity.LaunchActivity
+  appPackage: com.turrant
+  app: D:/app_list/turrant/Turrant_V1.0.2_2022-05-19-13-51-51_google.apk
+  deviceName: MOTO
+  platFormVersion: 11
+  platformName: Android
+  resetKeyboard: false
+  noReset: false
+  unicodeKeyboard: false
+  udid: 192.168.20.116:5555
+hongmi:
+  appActivity: com.turrant.ui.activity.LaunchActivity
+  appPackage: com.turrant
+  app: D:/app_list/turrant/Turrant_V1.0.2_2022-05-19-13-51-51_google.apk
+  deviceName: MOTO
+  platFormVersion: 11
+  platformName: Android
+  resetKeyboard: false
+  noReset: false
+  unicodeKeyboard: false
+  udid: 192.168.20.211:5555

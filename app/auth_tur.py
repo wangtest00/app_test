@@ -1,5 +1,4 @@
 import random,string,time,datetime
-from data.var_tur_app import *
 from dataBase.dataBase_tur import *
 
 def certlist():

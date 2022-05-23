@@ -6,6 +6,7 @@ oppo:
   #autoGrantPermissions: true
   #automationName: UiAutomator2
   app: D:/app_list/turrant/Turrant_V1.0.2_2022-05-19-13-51-51_google.apk
+  #app: D:/app_list/cashTM/CashTm_V2.6.7_2022-04-20_google.apk
   # 设备名称
   deviceName: OPPO
   # 设备系统版本号

@@ -48,8 +48,8 @@ def adb_disconnect(udid):
     os.system('adb disconnect '+udid+'')
 
 if __name__ == '__main__':
-    #appium_start('127.0.0.1', 4723)
-    appium_stop(4723)
+    appium_start('127.0.0.1', 4723)
+    #appium_stop(4723)
     # applist = ['OPPO', '11', '192.168.20.107:5555', 'com.turrant', 'com.turrant.ui.activity.LaunchActivity']
     # uninstall_app(applist[2],applist[3])
     #huanxing_screen('192.168.20.106:5555')

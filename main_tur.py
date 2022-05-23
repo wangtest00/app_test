@@ -2,7 +2,7 @@ import unittest,os,io,sys
 from BeautifulReport import BeautifulReport as bf  #导入BeautifulReport模块，这个模块也是生成报告的模块，但是比HTMLTestRunner模板好看
 from XTestRunner import HTMLTestRunner
 from unittestreport import TestRunner
-from data.var_tur_app import *
+from data.var_turrant import *
 
 
 #jenkins使用编码
