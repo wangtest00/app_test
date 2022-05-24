@@ -117,7 +117,7 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         self.driver.find_element_by_xpath(xp15).send_keys('this is home address')
         self.driver.find_element_by_xpath(xp16).click()
         time.sleep(1)
-        self.driver.find_element_by_xpath(xp17).click()
+        self.driver.find_element_by_id(id17).click()
         self.driver.find_element_by_xpath(xp18).click()
         time.sleep(3)
         self.driver.find_element_by_xpath(xp19).click()

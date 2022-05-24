@@ -71,5 +71,5 @@ def shouquan_hongmi(driver):
     driver.find_element_by_id('com.lbe.security.miui:id/permission_allow_button_1').click()
 
 if __name__ == '__main__':
-    #cx_grab_data('8931096039')
-    cx_point_track_dtl_new('7770622564')
+    cx_grab_data('7241122094')
+    #cx_point_track_dtl_new('7770622564')

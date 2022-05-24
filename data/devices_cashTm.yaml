@@ -5,7 +5,7 @@ oppo:
   appPackage: com.cashtm.andriod
   #autoGrantPermissions: true
   #automationName: UiAutomator2
-  app: D:/app_list/cashTM/CashTm_V2.6.7_2022-04-20_google.apk
+  app: D:/app_list/cashTM/CashTm_V2.6.7_2022-01-26_test.apk
   # 设备名称
   deviceName: OPPO
   # 设备系统版本号
