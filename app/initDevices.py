@@ -3,7 +3,6 @@ from appium import webdriver
 import yaml
 from logs.outputLog import OutputLog
 from app.appium_adb import *
-from data.common_path_tur import *
 
 class InitDevices:
     def __init__(self, file_name, device_name):
