@@ -5,7 +5,7 @@ from daiqian.auth_cashtm import *
 from app.grab_data import *
 from app.appium_adb import *
 from app.swipe_test import *
-from data.common_path import *
+from data.common_path_cashtm import *
 from data.var_cashtm import *
 
 #增加重试连接次数
@@ -60,7 +60,7 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         time.sleep(3)
         registNo=str(random.randint(7000000000,9999999999)) #10位随机数作为手机号
         print(registNo)
-        insert_white_list(inter_db,registNo)
+        insert_white_list(registNo)
         self.driver.find_element_by_id('com.cashtm.andriod:id/phone').send_keys(registNo)
         time.sleep(1)
         code = compute_code(registNo)

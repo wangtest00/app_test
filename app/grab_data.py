@@ -35,6 +35,7 @@ def shouquan_oppo(driver):
     time.sleep(3)
     driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
 def shouquan_oppo_cashtm(driver):
+    time.sleep(3)
     driver.find_element_by_id('com.cashtm.andriod:id/agree').click()
     time.sleep(3)
     driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
