@@ -162,10 +162,13 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         #self.driver.find_element_by_id('com.cashtm.andriod:id/tv_title').is_displayed()#检查是否被拒绝
         grab_data=cx_grab_data(registNo)
         for i in range(len(grab_data)):
-            self.assertIsNotNone(grab_data[i])
-        time.sleep(10)
-        self.assertEqual(cx_point_track_dtl_new(registNo),'26')
-        logout(self.driver)
+            if i==1 or i==4:
+                self.assertIsNone(grab_data[i])
+            else:
+                self.assertIsNotNone(grab_data[i])
+        time.sleep(5)
+        self.assertEqual(cx_point_track_dtl_new(registNo),'31')
+        logout_cashtm(self.driver)
     def tearDown(self):
         self.driver.quit()
         print("testcase done")
