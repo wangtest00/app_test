@@ -5,7 +5,7 @@ from daiqian.auth_cashtm import *
 from app.grab_data import *
 from app.appium_adb import *
 from app.swipe_test import *
-from data.common_path_cashtm import *
+from data.path_cashtm import *
 from data.var_cashtm import *
 
 #增加重试连接次数

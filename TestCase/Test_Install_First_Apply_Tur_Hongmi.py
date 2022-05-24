@@ -7,7 +7,7 @@ from app.grab_data import *
 from app.appium_adb import *
 from app.swipe_test import *
 from app.initDevices import *
-from data.common_path_tur import *
+from data.path_tur import *
 
 
 # #增加重试连接次数
