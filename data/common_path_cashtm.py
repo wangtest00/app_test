@@ -1,10 +1,4 @@
-import os
 
-cur_project_path=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-case_path=os.path.join(cur_project_path,"TestCase")
-report_path=os.path.join(cur_project_path,"reports")
-devices_path=os.path.join(cur_project_path,"data")
-log_path=os.path.join(cur_project_path,"logs")
 
 xp1="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.EditText"
 xp2="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.EditText"

@@ -1,6 +1,6 @@
 import logging
 import time
-from data.common_path_tur import *
+from data.common_path import *
 
 class OutputLog:
     critical = logging.CRITICAL  # 级别最高，什么也不输出

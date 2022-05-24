@@ -1,4 +1,5 @@
 from app.initDevices import *
+from data.common_path import *
 
 inter_db='manage_need_loan'
 prodNo='20150801'#duoqi50121401

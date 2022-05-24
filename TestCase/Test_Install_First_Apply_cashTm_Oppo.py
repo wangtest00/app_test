@@ -1,6 +1,6 @@
 from appium import webdriver
 import unittest,os,time,requests
-from daiqian.base_lp import *
+from daiqian.base_india import *
 from daiqian.auth_cashtm import *
 from app.grab_data import *
 from app.appium_adb import *
@@ -54,7 +54,7 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         self.driver.find_element_by_id('com.cashtm.andriod:id/code').send_keys('8888')
         time.sleep(1)
         self.driver.find_element_by_id('com.cashtm.andriod:id/login_btn').click()
-    def test_install_first_apply(self):
+    def test_install_first_apply_102(self):
         '''【cashTm-android-OPPO】test_install_first_apply-授权，进件5页面，检查数据抓取/埋点数据量-正案例'''
         shouquan_oppo_cashtm(self.driver)
         time.sleep(3)

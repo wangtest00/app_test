@@ -1,6 +1,6 @@
 from appium import webdriver
 import unittest,requests,time
-from daiqian.base_lp import *
+from daiqian.base_india import *
 from daiqian.auth_tur import *
 from data.var_turrant import *
 from app.grab_data import *
