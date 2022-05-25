@@ -30,7 +30,7 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         #设置隐式等待为 10s,一旦设置了隐式等待，它则会在整个Web Driver对象的实例声明周期中。
         self.driver.implicitly_wait(10)
         swipeup(self.driver,1000)
-    def test_jinzhi_shouquan(self):
+    def test_jinzhi_shouquan_102(self):
         '''【cashTm-android-OPPO】test_jinzhi_shouquan-禁止授权-正案例'''
         self.driver.find_element_by_id('com.cashtm.andriod:id/agree').click()
         time.sleep(3)
@@ -43,7 +43,7 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
         time.sleep(1)
         self.assertTrue(self.driver.find_element_by_id('com.cashtm.andriod:id/tt_msg').is_displayed())
-    def test_install_login(self):
+    def test_install_login_102(self):
         '''【cashTm-android-OPPO】test_install_login-授权,登录-正案例'''
         shouquan_oppo_cashtm(self.driver)
         time.sleep(5)

@@ -31,7 +31,7 @@ class Test_Install_First_Apply_Tur_Moto(unittest.TestCase):
         self.driver = devices_object_moto.init_devices(port_moto, devices_info_moto)
         # 设置隐式等待为 10s
         self.driver.implicitly_wait(10)
-    def test_install_login(self):
+    def test_install_login_104(self):
         '''【turrant-android-MOTO】test_install_login-授权,登录-正案例'''
         shouquan_moto(self.driver)
         time.sleep(3)
@@ -40,7 +40,7 @@ class Test_Install_First_Apply_Tur_Moto(unittest.TestCase):
         input2 = self.driver.find_element_by_id('com.turrant:id/code')
         input2.send_keys('5555')
         self.driver.find_element_by_id('com.turrant:id/login_btn').click()
-    def test_install_frist_apply(self):
+    def test_install_frist_apply_104(self):
         '''【turrant-android-MOTO】test_install_first_apply-授权，进件5页面，检查数据抓取正案例'''
         shouquan_moto(self.driver)
         time.sleep(3)
