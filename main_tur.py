@@ -9,7 +9,7 @@ from data.var_turrant import *
 #sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="gb18030")
 
 def load_all_case():
-    discover=unittest.defaultTestLoader.discover(case_path,pattern='*.py')
+    discover=unittest.defaultTestLoader.discover(case_path,pattern='Test_Install_First_Apply_cashTm_Oppo.py')
     return discover
 
 if __name__=='__main__':

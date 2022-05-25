@@ -163,7 +163,7 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         for i in range(len(grab_data)):
             self.assertIsNotNone(grab_data[i])
         time.sleep(10)
-        self.assertEqual(cx_point_track_dtl_new(registNo),'26')
+        self.assertEqual(cx_point_track_dtl_new(registNo),'24')
         logout(self.driver)
     def tearDown(self):
         self.driver.quit()

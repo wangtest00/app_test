@@ -35,13 +35,13 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         self.driver.find_element_by_id('com.cashtm.andriod:id/agree').click()
         time.sleep(3)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
-        time.sleep(3)
+        time.sleep(1)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
-        time.sleep(3)
+        time.sleep(1)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
-        time.sleep(3)
+        time.sleep(1)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
-        time.sleep(3)
+        time.sleep(1)
         self.assertTrue(self.driver.find_element_by_id('com.cashtm.andriod:id/tt_msg').is_displayed())
     def test_install_login(self):
         '''【cashTm-android-OPPO】test_install_login-授权,登录-正案例'''
