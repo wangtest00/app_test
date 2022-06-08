@@ -6,7 +6,7 @@ Created on 2018-11-26
 import time
 import pymysql
 from public.date_calculate import *
-from data.var_turrant import *
+from data.var_cashtm import *
 
 class DataBase():
     def __init__(self,witchdb):

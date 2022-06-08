@@ -1,11 +1,11 @@
 from appium import webdriver
 import unittest,os,time,requests
-from daiqian.base_india import *
+from daiqian.base_lp import *
 from daiqian.auth_cashtm import *
 from app.grab_data import *
 from app.appium_adb import *
 from app.swipe_test import *
-from data.path_cashtm import *
+from data.common_path import *
 from data.var_cashtm import *
 
 #增加重试连接次数
@@ -30,20 +30,20 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         #设置隐式等待为 10s,一旦设置了隐式等待，它则会在整个Web Driver对象的实例声明周期中。
         self.driver.implicitly_wait(10)
         swipeup(self.driver,1000)
-    def test_jinzhi_shouquan_102(self):
+    def test_jinzhi_shouquan(self):
         '''【cashTm-android-OPPO】test_jinzhi_shouquan-禁止授权-正案例'''
         self.driver.find_element_by_id('com.cashtm.andriod:id/agree').click()
         time.sleep(3)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
-        time.sleep(1)
+        time.sleep(3)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
-        time.sleep(1)
+        time.sleep(3)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
-        time.sleep(1)
+        time.sleep(3)
         self.driver.find_element_by_id('com.android.permissioncontroller:id/permission_deny_button').click()
-        time.sleep(1)
+        time.sleep(3)
         self.assertTrue(self.driver.find_element_by_id('com.cashtm.andriod:id/tt_msg').is_displayed())
-    def test_install_login_102(self):
+    def test_install_login(self):
         '''【cashTm-android-OPPO】test_install_login-授权,登录-正案例'''
         shouquan_oppo_cashtm(self.driver)
         time.sleep(5)
@@ -54,13 +54,13 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         self.driver.find_element_by_id('com.cashtm.andriod:id/code').send_keys('8888')
         time.sleep(1)
         self.driver.find_element_by_id('com.cashtm.andriod:id/login_btn').click()
-    def test_install_first_apply_102(self):
+    def test_install_first_apply(self):
         '''【cashTm-android-OPPO】test_install_first_apply-授权，进件5页面，检查数据抓取/埋点数据量-正案例'''
         shouquan_oppo_cashtm(self.driver)
         time.sleep(3)
         registNo=str(random.randint(7000000000,9999999999)) #10位随机数作为手机号
         print(registNo)
-        insert_white_list(registNo)
+        insert_white_list(inter_db,registNo)
         self.driver.find_element_by_id('com.cashtm.andriod:id/phone').send_keys(registNo)
         time.sleep(1)
         code = compute_code(registNo)
@@ -116,11 +116,11 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         self.driver.find_element_by_xpath(xp14).send_keys('123456789')
         self.driver.find_element_by_xpath(xp15).send_keys('this is home address')
         self.driver.find_element_by_xpath(xp16).click()
-        time.sleep(1)
+        time.sleep(3)
         self.driver.find_element_by_id(id17).click()
         self.driver.find_element_by_xpath(xp18).click()
         time.sleep(3)
-        self.driver.find_element_by_xpath(xp19).click()
+        self.driver.find_element_by_id(id19).click()
         self.driver.find_element_by_id('com.cashtm.andriod:id/next').click()#step4点击下一步,进入工作信息证明页面
         time.sleep(5)
         self.driver.find_element_by_xpath(xp20).click()
@@ -162,13 +162,10 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         #self.driver.find_element_by_id('com.cashtm.andriod:id/tv_title').is_displayed()#检查是否被拒绝
         grab_data=cx_grab_data(registNo)
         for i in range(len(grab_data)):
-            if i==1 or i==4:
-                self.assertIsNone(grab_data[i])
-            else:
-                self.assertIsNotNone(grab_data[i])
-        time.sleep(5)
-        self.assertEqual(cx_point_track_dtl_new(registNo),'31')
-        logout_cashtm(self.driver)
+            self.assertIsNotNone(grab_data[i])
+        time.sleep(10)
+        self.assertEqual(cx_point_track_dtl_new(registNo),'26')
+        logout(self.driver)
     def tearDown(self):
         self.driver.quit()
         print("testcase done")

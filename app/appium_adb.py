@@ -1,11 +1,13 @@
 import subprocess
 import sys,os
-from data.common_path import *
+from data.common_path_fr import *
+import warnings
 
 def appium_start(host, port):
     cmd = 'appium -a '+host+' -p '+str(port)
     print(cmd)
     subprocess.Popen(cmd, shell=True, stdout=open(log_path+'/'+str(port)+'.log','a'),stderr=subprocess.STDOUT)
+    #warnings.simplefilter('ignore', ResourceWarning)
 
 def appium_stop(port):
     mac_cmd = f"lsof -i tcp:{port}"

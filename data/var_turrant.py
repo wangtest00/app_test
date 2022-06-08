@@ -1,8 +1,7 @@
 from app.initDevices import *
-from data.common_path import *
 
 inter_db='manage_need_loan'
-prodNo='20150801'#duoqi50121401
+prodNo=' '#duoqi50121401
 applist={'104':'Turrant','102':'CashTM'}
 appNo='104'
 appName=applist[appNo]
