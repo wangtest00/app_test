@@ -1,0 +1,33 @@
+vivo:
+  appActivity: com.loan.prestamo.cash.credit.ifectivo.okredito.tala.efectivo.mexico.MainActivity
+  appPackage: com.loan.prestamo.cash.credit.ifectivo.okredito.tala.efectivo.mexico
+  app: E:\app\feriarapida-1.1.6(116)-03-11-10-10-release.apk
+  deviceName: VIVO
+  platFormVersion: 10
+  platformName: Android
+  resetKeyboard: false
+  noReset: false
+  unicodeKeyboard: false
+  udid: 192.168.20.150:5555
+samsung:
+  appActivity: com.loan.prestamo.cash.credit.ifectivo.okredito.tala.efectivo.mexico.MainActivity
+  appPackage: com.loan.prestamo.cash.credit.ifectivo.okredito.tala.efectivo.mexico
+  app: E:\app\feriarapida-1.1.6(116)-03-11-10-10-release.apk
+  deviceName: SamSung
+  platFormVersion: 11
+  platformName: Android
+  resetKeyboard: false
+  noReset: false
+  unicodeKeyboard: false
+  udid: 192.168.20.114:5555
+hongmi:
+  appActivity: com.loan.prestamo.cash.credit.ifectivo.okredito.tala.efectivo.mexico.MainActivity
+  appPackage: com.loan.prestamo.cash.credit.ifectivo.okredito.tala.efectivo.mexico
+  app: E:\app\feriarapida-1.1.6(116)-03-11-10-10-release.apk
+  deviceName: HongMi
+  platFormVersion: 11
+  platformName: Android
+  resetKeyboard: false
+  noReset: false
+  unicodeKeyboard: false
+  udid: 192.168.20.211:5555
