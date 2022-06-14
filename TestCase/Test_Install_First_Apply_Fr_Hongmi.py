@@ -222,6 +222,33 @@ class Test_Install_Login_Fr(unittest.TestCase):
         self.driver.find_element_by_xpath(xp57).click()  # 取消去反馈
         time.sleep(3)
         self.assertTrue(self.driver.find_element_by_xpath(xp58).is_displayed())
+        # 校验抓取的5个数据不为空
+        grab_data = cx_grab_data(registNo)
+        for i in range(len(grab_data)):
+            self.assertIsNotNone(grab_data[i])
+        #退出登录
+        logout(self.driver)
+    def test_install_login_huankuan(self):
+        '''【FeriaRapida-android-HongMi】test_install_login_huankuan-还款用户登录-日历事件写入-申请还款正案例'''
+        # 读取设备登录google play的手机号
+        self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
+        registNo = hk_phone()  # 还款手机号
+        mima = "123456"  # 密码
+        change_shuru(self.driver, xp1, registNo)
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp2).click()  # 注册按钮
+        time.sleep(3)
+        change_shuru(self.driver, "//*[contains(@text,'Introducir la Contraseña')]", mima)  # 输入密码
+        time.sleep(3)
+        shouquan_hongmi(self.driver)  # 授权
+        time.sleep(3)
+        # 日历事件的写入
+
+        # 点击还款账单详情
+        # 获取还款方式
+        # STP还款
+        # OXXO还款
+
 
     def tearDown(self):
         self.driver.quit()

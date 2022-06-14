@@ -29,5 +29,18 @@ def fk_phone():
     result = DataBase(inter_db).get_one(sql)
     print(result[2])
     return result[2]
+def hk_phone():
+    sql='''
+    select a.REGIST_NO
+    from cu_cust_reg_dtl a 
+    LEFT JOIN lo_loan_dtl b
+    on a.CUST_NO=b.CUST_NO
+    where b.AFTER_STAT='10270002'
+    and a.APP_NO='202'
+    ORDER BY b.INST_TIME desc limit 1;'''
+    result = DataBase(inter_db).get_one(sql)
+    #print(result[0])
+    return result[0]
+
 if __name__ == '__main__':
-    fk_phone()
+    hk_phone()
