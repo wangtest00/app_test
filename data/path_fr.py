@@ -75,3 +75,18 @@ xp60="//*[contains(@text,'Por favor, ingrese su correo electrónico.')]"
 xp61='//android.widget.Button[@content-desc="Confirmar"]'
 xp62="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button"
 
+#日历事件
+xp63='//android.widget.Button[@content-desc="Confirmar"]'
+xp64='//android.widget.Button[@content-desc="确定"]'
+xp65='//android.widget.Button[@content-desc="取消"]'
+
+#放款成功页面，点击按钮去获取账单信息
+xp66='//android.widget.Button[@content-desc="Ver Factura"]'
+
+#点击获取还款方式
+xp67='//android.widget.Button[@content-desc="Paga ahora"]'
+
+#oxxo还款
+xp68='//android.widget.ImageView[@content-desc="Comisión: $12 Horario: 24/7"]'
+xp69='//android.view.View[@content-desc="Confirmar"]'
+xp70='//android.view.View[@content-desc="Monto de pago"]'

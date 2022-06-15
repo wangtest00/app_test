@@ -7,7 +7,7 @@ from app.grab_data_fr import *
 from app.appium_adb import *
 from app.swipe_test import *
 from app.initDevices import *
-from data.common_path_fr import *
+from data.common_path import *
 import warnings
 
 # PATH = lambda p: os.path.abspath(

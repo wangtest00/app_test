@@ -3,7 +3,7 @@ from BeautifulReport import BeautifulReport as bf  #导入BeautifulReport模块�
 from XTestRunner import HTMLTestRunner
 from unittestreport import TestRunner
 from data.var_fr import *
-
+from data.common_path import *
 
 #jenkins使用编码
 #sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="gb18030")

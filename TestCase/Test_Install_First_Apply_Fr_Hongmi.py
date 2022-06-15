@@ -7,7 +7,7 @@ from app.grab_data_fr import *
 from app.appium_adb import *
 from app.swipe_test import *
 from app.initDevices import *
-from data.common_path_fr import *
+from data.common_path import *
 import warnings
 from public.change_shurukaung import *
 from data.path_fr import *
@@ -240,15 +240,37 @@ class Test_Install_Login_Fr(unittest.TestCase):
         time.sleep(3)
         change_shuru(self.driver, "//*[contains(@text,'Introducir la Contraseña')]", mima)  # 输入密码
         time.sleep(3)
+        # 日历事件的写入
+        self.driver.find_element_by_xpath(xp63).click()  # 点击去写入日历事件
+        self.driver.find_element_by_xpath(xp64).click()  # 点击确定
         shouquan_hongmi(self.driver)  # 授权
         time.sleep(3)
-        # 日历事件的写入
-
         # 点击还款账单详情
+        self.driver.find_element_by_xpath(xp66).click()
         # 获取还款方式
-        # STP还款
-        # OXXO还款
-
+        self.driver.find_element_by_xpath(xp67).click()
+        # 默认选择STP还款
+        self.driver.find_element_by_xpath(xp69).click()
+        #判断进入stp还款信息页面
+        self.assertTrue(self.driver.find_element_by_xpath(xp70).is_displayed())
+    def test_install_login_quxiaorili(self):
+        '''【FeriaRapida-android-HongMi】test_install_login_quxiaorili-还款用户登录-取消日历事件写入-正案例'''
+        # 读取设备登录google play的手机号
+        self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
+        registNo = hk_phone()  # 还款手机号
+        mima = "123456"  # 密码
+        change_shuru(self.driver, xp1, registNo)
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp2).click()  # 注册按钮
+        time.sleep(3)
+        change_shuru(self.driver, "//*[contains(@text,'Introducir la Contraseña')]", mima)  # 输入密码
+        time.sleep(3)
+        # 日历事件的写入
+        self.driver.find_element_by_xpath(xp63).click()  # 点击去写入日历事件
+        self.driver.find_element_by_xpath(xp65).click()  # 点击取消
+        self.driver.find_element_by_id('android:id/button1').click()  # 点击确定
+        shouquan_hongmi(self.driver)  # 授权
+        time.sleep(3)
 
     def tearDown(self):
         self.driver.quit()

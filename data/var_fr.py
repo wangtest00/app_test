@@ -8,7 +8,7 @@ from app.initDevices import *
 # print('666',devices_info_2)
 
 inter_db='mex_pdl_loan'
-prodNo='25002400'#duoqi50121401
+prodNo='25002400'#多期50121401
 appNo='202'
 applist={'201':'LanaPlus','202':'FeriaRapida'}
 appName=applist[appNo]

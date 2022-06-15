@@ -27,7 +27,7 @@ def fk_phone():
     HAVING loan_cnt=1
     order by b.INST_TIME desc limit 1;'''
     result = DataBase(inter_db).get_one(sql)
-    print(result[2])
+    #print(result[2])
     return result[2]
 def hk_phone():
     sql='''

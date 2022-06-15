@@ -1,6 +1,6 @@
 import subprocess
 import sys,os
-from data.common_path_fr import *
+from data.common_path import *
 import warnings
 
 def appium_start(host, port):
