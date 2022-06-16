@@ -9,17 +9,17 @@ from data.var_turrant import *
 #sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="gb18030")
 
 def load_all_case():
-    discover=unittest.defaultTestLoader.discover(case_path,pattern='Test_Install_First_Apply_cashTm_Oppo.py')
+    discover=unittest.defaultTestLoader.discover(case_path,pattern='Test_Install_First_Apply_Tur_Oppo.py')
     return discover
 
 if __name__=='__main__':
     suite=load_all_case()
     # 执行用例
     runner = TestRunner(suite,
-                        filename='Turrant_Test_Reports.html',
-                        title='Turrant_Test_Reports',
+                        filename='App_Test_Reports.html',
+                        title='App_Test_Reports',
                         tester='WANGSHUANG',
-                        desc="Turrant_Ui_Auto_Test",
+                        desc="India_Ui_Auto_Test",
                         templates=1
                         )
     # 指定三个线程运行测试用例

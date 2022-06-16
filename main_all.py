@@ -3,6 +3,7 @@ from BeautifulReport import BeautifulReport as bf  #导入BeautifulReport模块�
 #from HTMLTestRunner_Chart import HTMLTestRunner
 from XTestRunner import HTMLTestRunner
 from data.path_tur import *
+from data.commonPath import *
 
 #sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="gb18030")
 

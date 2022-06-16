@@ -74,9 +74,9 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         time.sleep(5)
         self.driver.find_element_by_id("com.turrant:id/textView2").click()#点击ok
         self.driver.find_element_by_xpath(xp5).click()                    #点击education
-        time.sleep(3)
+        time.sleep(1)
         self.driver.find_element_by_id('com.turrant:id/textView2').click()#点击ok
-        time.sleep(3)
+        time.sleep(1)
         self.driver.find_element_by_xpath(xp6).click()     #marital status婚姻状况
         time.sleep(3)
         self.driver.find_element_by_id('com.turrant:id/textView2').click()#点击ok
@@ -87,9 +87,9 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         self.driver.find_element_by_xpath(xp8).send_keys(curtNo[0])  #A卡
         self.driver.find_element_by_xpath(xp9).send_keys(curtNo[1])  #pan卡
         self.driver.find_element_by_xpath(xp10).click()  # 选择语言
-        time.sleep(3)
+        time.sleep(1)
         self.driver.find_element_by_id('com.turrant:id/textView2').click()
-        time.sleep(3)
+        time.sleep(1)
         self.driver.find_element_by_xpath(xp11).click()  #step2点击下一步,进入kyc页面
         time.sleep(3)
         self.driver.find_element_by_id('com.turrant:id/card_1').click()
@@ -105,7 +105,7 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         self.driver.find_element_by_xpath(xp12).click()
         self.driver.find_element_by_xpath(xp13).click()
         self.driver.find_element_by_id('com.turrant:id/card_4').click()
-        time.sleep(3)
+        time.sleep(2)
         self.driver.find_element_by_id('com.oppo.camera:id/shutter_button').click()#点击拍照
         time.sleep(3)
         self.driver.find_element_by_id('com.oppo.camera:id/done_button').click() #点击确认
@@ -115,10 +115,10 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         self.driver.find_element_by_xpath(xp14).send_keys('123456789')
         self.driver.find_element_by_xpath(xp15).send_keys('this is home address')
         self.driver.find_element_by_xpath(xp16).click()
-        time.sleep(3)
+        time.sleep(2)
         self.driver.find_element_by_id(id17).click()
         self.driver.find_element_by_xpath(xp18).click()
-        time.sleep(3)
+        time.sleep(2)
         self.driver.find_element_by_id(id19).click()
         self.driver.find_element_by_id('com.turrant:id/next').click()#step4点击下一步,进入工作信息证明页面
         time.sleep(5)
@@ -155,15 +155,27 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         self.driver.find_element_by_xpath(xp43).send_keys('7474666333')
         swipeup(self.driver,1000)
         self.driver.find_element_by_id('com.turrant:id/next').click() #点击提交申请
-        time.sleep(30)
-        self.driver.find_element_by_id('com.turrant:id/bind_bank').click() #提交成功后，点击ok按钮
         time.sleep(5)
-        #self.driver.find_element_by_id('com.turrant:id/tv_title').is_displayed()#检查是否被拒绝
+        self.driver.find_element_by_id('com.turrant:id/bind_bank').click() #提交成功后，点击ok按钮
+        time.sleep(3)
+        self.driver.find_element_by_id('com.turrant:id/btn_add_bank').click()#点击add account按钮去绑卡
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp45).send_keys(registNo+'12345678')
+        self.driver.find_element_by_xpath(xp46).send_keys(registNo+'12345678')
+        self.driver.find_element_by_xpath(xp47).send_keys('turranttest')
+        self.driver.find_element_by_xpath(xp48).send_keys('SCBL0036024')
+        self.driver.find_element_by_id(id49).click()
+        time.sleep(2)
+        self.driver.find_element_by_id(id50).click()   #点击确认按钮
+        time.sleep(1)
+        self.driver.find_element_by_id(id51).click()   #点击左上角返回
+        time.sleep(1)
+        self.driver.find_element_by_id(id52).is_displayed()   #验证审批中图标是否展示
         grab_data=cx_grab_data(registNo)
         for i in range(len(grab_data)):
             self.assertIsNotNone(grab_data[i])
-        time.sleep(10)
-        self.assertEqual(cx_point_track_dtl_new(registNo),'24')
+        time.sleep(3)
+        self.assertEqual(cx_point_track_dtl_new(registNo),'27')
         logout(self.driver)
     def tearDown(self):
         self.driver.quit()

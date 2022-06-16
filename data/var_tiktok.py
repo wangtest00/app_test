@@ -1,5 +1,5 @@
 from app.initDevices import *
-from data.common_path import *
+from data.commonPath import  *
 
 
 port_oppo = 4733  # appium和driver端口号

@@ -156,10 +156,19 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
         self.driver.find_element_by_xpath(xp43).send_keys('7474666333')
         swipeup(self.driver,1000)
         self.driver.find_element_by_id('com.cashtm.andriod:id/next').click() #点击提交申请
-        time.sleep(30)
-        self.driver.find_element_by_id('com.cashtm.andriod:id/bind_bank').click() #提交成功后，点击ok按钮
         time.sleep(5)
-        #self.driver.find_element_by_id('com.cashtm.andriod:id/tv_title').is_displayed()#检查是否被拒绝
+        self.driver.find_element_by_id('com.cashtm.andriod:id/bind_bank').click() #提交成功后，点击ok按钮
+        time.sleep(3)
+        self.driver.find_element_by_id('com.cashtm.andriod:id/btn_add_bank').click()  # 点击add account按钮去绑卡
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp45).send_keys(registNo + '12345678')
+        self.driver.find_element_by_xpath(xp46).send_keys(registNo + '12345678')
+        self.driver.find_element_by_id(id48).send_keys('SCBL0036024')
+        self.driver.find_element_by_id(id49).click()
+        time.sleep(2)
+        self.driver.find_element_by_id(id50).click()  # 点击确认按钮
+        time.sleep(2)
+        self.driver.find_element_by_id(id52).is_displayed()   #验证审批中图标是否展示
         grab_data=cx_grab_data(registNo)
         for i in range(len(grab_data)):
             if i==1 or i==4:
@@ -167,7 +176,7 @@ class Test_Install_First_Apply_cashTm_Oppo(unittest.TestCase):
             else:
                 self.assertIsNotNone(grab_data[i])
         time.sleep(5)
-        self.assertEqual(cx_point_track_dtl_new(registNo),'31')
+        self.assertEqual(cx_point_track_dtl_new(registNo),'40')
         logout_cashtm(self.driver)
     def tearDown(self):
         self.driver.quit()
