@@ -311,7 +311,7 @@ class Test_Install_Login_Fr(unittest.TestCase):
         self.driver.find_element_by_xpath(xp83).click()  # 点击反馈按钮
         self.driver.find_element_by_xpath(xp84).click()  # 点击ok
     def test_install_login_chexiao(self):
-        '''【FeriaRapida-android-HongMi】test_install_login_chexiao-撤销用户登录--重新进件，检查数据抓取正案例'''
+        '''【FeriaRapida-android-HongMi】test_install_login_chexiao-撤销用户登录--重新进件正案例'''
         # 读取设备登录google play的手机号
         self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
         registNo = cx_phone()  # 撤销用户手机号
