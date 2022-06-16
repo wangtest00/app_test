@@ -49,8 +49,8 @@ class Test_Install_Login_Fr(unittest.TestCase):
         time.sleep(3)
         shouquan_hongmi(self.driver)
         time.sleep(3)
-    def test_jinzhi_shouquan(self):
-        '''【FeriaRapida-android-HongMi】test_jinzhi_shouquan-新用户登录-设置密码,禁止授权-正案例'''
+    def test_install_login_jinzhi_shouquan(self):
+        '''【FeriaRapida-android-HongMi】test_install_login_jinzhi_shouquan-新用户登录-设置密码,禁止授权-正案例'''
         # 读取设备登录google play的手机号
         self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
         registNo = str(random.randint(7000000000, 9999999999))  # 10位随机数作为手机号
@@ -91,8 +91,8 @@ class Test_Install_Login_Fr(unittest.TestCase):
         self.driver.find_element_by_id('com.lbe.security.miui:id/permission_deny_and_dont_ask_again_button').click()  # 拒绝且不再询问
         time.sleep(3)
         self.assertTrue(self.driver.find_element_by_xpath('//android.widget.Button[@content-desc="Confirmar"]').is_displayed())
-    def test_install_first_apply(self):
-        '''【FeriaRapida-android-HongMi】test_install_first_apply-新客登录-设置密码，授权，进件4页面-绑卡，检查数据抓取正案例'''
+    def test_install_login_first_apply(self):
+        '''【FeriaRapida-android-HongMi】test_install_login_first_apply-新客登录-设置密码，授权，进件4页面-绑卡，检查数据抓取正案例'''
         # 读取设备登录google play的手机号
         self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
         registNo = str(random.randint(7000000000,9999999999))  # 10位随机数作为手机号
@@ -271,6 +271,71 @@ class Test_Install_Login_Fr(unittest.TestCase):
         self.driver.find_element_by_id('android:id/button1').click()  # 点击确定
         shouquan_hongmi(self.driver)  # 授权
         time.sleep(3)
+    def test_install_login_fankui(self):
+        '''【FeriaRapida-android-HongMi】test_install_login_fankui-新用户登录-反馈信息-正案例'''
+        # 读取设备登录google play的手机号
+        self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
+        registNo = str(random.randint(7000000000, 9999999999))  # 10位随机数作为手机号
+        code = compute_code(registNo)  # 计算验证码
+        mima = "123456"  # 密码
+        detalls = "testtest"
+        change_shuru(self.driver, xp1, registNo)
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp2).click()  # 点击注册按钮
+        time.sleep(3)
+        change_shuru(self.driver, xp3, code)  # 输入验证码
+        time.sleep(3)
+        change_shuru(self.driver, xp4, mima)  # 输入密码
+        time.sleep(3)
+        change_shuru(self.driver, xp5, mima)  # 再次输入密码
+        time.sleep(3)
+        shouquan_hongmi(self.driver)
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp71).click()  # 点击反馈图标
+        self.driver.find_element_by_xpath(xp72).click()
+        self.driver.find_element_by_xpath(xp73).click()
+        self.driver.find_element_by_xpath(xp74).click()  # 点击反馈问题
+        self.driver.find_element_by_xpath(xp75).click()
+        self.driver.find_element_by_xpath(xp76).click()
+        change_shuru(self.driver, xp77, detalls)  # 输入描述
+        swipeup(self.driver, 1000)
+        self.driver.find_element_by_xpath(xp79).click()  # 选择第一个添加图片
+        self.driver.find_element_by_xpath(xp78).click()  # 去相册选择
+        self.driver.find_element_by_xpath(xp80).click()
+        time.sleep(2)
+        self.driver.find_element_by_xpath(xp81).click()  # 选择第二个添加图片
+        self.driver.find_element_by_xpath(xp78).click()
+        self.driver.find_element_by_xpath(xp82).click()
+
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp83).click()  # 点击反馈按钮
+        self.driver.find_element_by_xpath(xp84).click()  # 点击ok
+    def test_install_login_chexiao(self):
+        '''【FeriaRapida-android-HongMi】test_install_login_chexiao-撤销用户登录--重新进件，检查数据抓取正案例'''
+        # 读取设备登录google play的手机号
+        self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
+        registNo = cx_phone()  # 撤销用户手机号
+        mima = "123456"  # 密码
+        change_shuru(self.driver, xp1, registNo)
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp2).click()  # 注册按钮
+        time.sleep(3)
+        change_shuru(self.driver, "//*[contains(@text,'Introducir la Contraseña')]", mima)  # 输入密码
+        time.sleep(3)
+        shouquan_hongmi(self.driver)  # 授权
+        time.sleep(3)
+        #self.driver.find_element_by_xpath(xp85).click()  # 点击重新申请贷款按钮
+        self.driver.find_element_by_xpath(xp6).click()
+        self.driver.find_element_by_xpath(xp86).click()
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp86).click()
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp86).click()
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp86).click()
+        time.sleep(2)
+        self.driver.find_element_by_xpath(xp87).click()
+        self.driver.find_element_by_xpath(xp88).click()
 
     def tearDown(self):
         self.driver.quit()

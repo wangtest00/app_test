@@ -90,3 +90,25 @@ xp67='//android.widget.Button[@content-desc="Paga ahora"]'
 xp68='//android.widget.ImageView[@content-desc="Comisión: $12 Horario: 24/7"]'
 xp69='//android.view.View[@content-desc="Confirmar"]'
 xp70='//android.view.View[@content-desc="Monto de pago"]'
+
+#反馈页面
+xp71='/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.ImageView[2]'
+xp72='//android.view.View[@content-desc="Visitar"]'
+xp73='//android.widget.Button[@content-desc="返回"]'
+xp74='//android.widget.ImageView[@content-desc="Selecciona,por favor."]'
+xp75='//android.widget.Button[@content-desc="Okay"]'
+xp76='//android.widget.RadioButton[@content-desc="Me acosaron por mensajes de WhatsApp."]'
+xp77="//*[contains(@text,'Es mejor ofrecernos más informaciones para ayudarle.')]"
+xp78="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.ImageView[1]"
+xp79="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.widget.ImageView[1]"
+xp80='//android.widget.FrameLayout[@content-desc="照片，2022年6月16日 1:01:6，四川省，成都市"]/android.widget.FrameLayout/android.widget.TextView'
+xp81="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.widget.ImageView[3]"
+xp82='//android.widget.FrameLayout[@content-desc="照片，2022年6月16日 1:01:3，四川省，成都市"]/android.widget.FrameLayout/android.widget.TextView'
+xp83='//android.widget.Button[@content-desc="Enviar"]'
+xp84='//android.view.View[@content-desc="Okay"]'
+
+#撤销页面
+xp85='//android.widget.Button[@content-desc="Modificar y Aplicar"]'
+xp86='//android.widget.Button[@content-desc="Continuar"]'
+xp87="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.widget.ImageView[4]"
+xp88='//android.widget.Button[@content-desc="Okay"]'

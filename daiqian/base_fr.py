@@ -27,7 +27,7 @@ def fk_phone():
     HAVING loan_cnt=1
     order by b.INST_TIME desc limit 1;'''
     result = DataBase(inter_db).get_one(sql)
-    #print(result[2])
+    # print(result[2])
     return result[2]
 def hk_phone():
     sql='''
@@ -39,8 +39,25 @@ def hk_phone():
     and a.APP_NO='202'
     ORDER BY b.INST_TIME desc limit 1;'''
     result = DataBase(inter_db).get_one(sql)
-    #print(result[0])
+    # print(result[0])
     return result[0]
-
+def cx_phone():
+    sql='''
+    select  b.cust_no,count(1) as loan_cnt, c.REGIST_NO from (select  a.cust_no from
+    lo_loan_dtl a
+    WHERE a.BEFORE_STAT = '10260007'
+    and date(a.INST_TIME)<date(now())
+    GROUP BY a.cust_no
+    HAVING count(1) =1
+    )a INNER JOIN lo_loan_dtl b on a.cust_no=b.cust_no inner join cu_cust_reg_dtl c on b.cust_no=c.cust_no 
+    INNER JOIN cu_cust_pwd_dtl d on c.REGIST_NO=d.REGIST_NO
+    INNER JOIN cu_cust_bank_card_dtl e on a.CUST_NO=e.CUST_NO
+    where c.APP_NO='202'
+    group by  b.cust_no
+    HAVING loan_cnt=1
+    order by b.INST_TIME desc limit 1;'''
+    result = DataBase(inter_db).get_one(sql)
+    # print(result[2])
+    return result[2]
 if __name__ == '__main__':
-    hk_phone()
+    cx_phone()
