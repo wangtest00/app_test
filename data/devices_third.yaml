@@ -1,0 +1,26 @@
+tiktok:
+  appPackage: com.zhiliaoapp.musically
+  #应用启动需要的Android Activity名称
+  appActivity: com.ss.android.ugc.aweme.splash.SplashActivity
+  app: D:/app_list/TikTok.apk
+  deviceName: OPPO
+  platFormVersion: 11
+  platformName: Android
+  resetKeyboard: false
+  noReset: True
+  unicodeKeyboard: false
+  #连接的物理设备的唯一设备标识,如果连接真机测试，必须指定设备的id（在adb devides里或设置里查看)
+  udid: 192.168.20.139:5555
+moutai:
+  appPackage: com.moutai.mall
+  #应用启动需要的Android Activity名称
+  appActivity: .module.splash.SplashActivity
+  app: E:\360Downloads\Apk\i茅台1.2.3.apk
+  deviceName: OPPO
+  platFormVersion: 11
+  platformName: Android
+  resetKeyboard: false
+  noReset: True
+  unicodeKeyboard: false
+  #连接的物理设备的唯一设备标识,如果连接真机测试，必须指定设备的id（在adb devides里或设置里查看)
+  udid: 192.168.20.139:5555
