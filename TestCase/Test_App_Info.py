@@ -42,7 +42,7 @@ class Controller(object):
         time.sleep(3)
         currentTime=self.getCurrentTime()
         self.alldata.append((currentTime,elpasedtime))
-        print(self.alldata)
+        #print(self.alldata)
     def run(self,udid,packageName,appActivity):
         while self.counter>0:
             self.testProcess(udid,packageName,appActivity)
@@ -87,7 +87,7 @@ class ControllerForMeminfo(object): #内存
     def testProcess(self,udid,packageName):
         result=popen('adb -s '+udid+' shell dumpsys meminfo '+packageName).read()
         data=result.split('\n')
-        print(data)
+        #print(data)
         if 'No process found for: '+packageName in data:
             print("app进程未开启")
             currentTime = self.getCurrentTime()
