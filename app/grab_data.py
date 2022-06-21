@@ -21,20 +21,18 @@ def cx_point_track_dtl_new(registNo):
     num=str(num[0])
     return num
 
+
 def shouquan_oppo(driver):
     driver.find_element_by_id('com.turrant:id/agree').click()
     time.sleep(3)
     driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
     time.sleep(1)
     driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_foreground_only_button').click()
-    time.sleep(1)
-    driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
-    time.sleep(1)
-    driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
-    time.sleep(1)
-    driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
-    time.sleep(1)
-    driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
+    for i in range(4):
+        time.sleep(1)
+        driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_button').click()
+
+
 def shouquan_oppo_cashtm(driver):
     time.sleep(3)
     driver.find_element_by_id('com.cashtm.andriod:id/agree').click()

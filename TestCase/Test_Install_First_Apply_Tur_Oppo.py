@@ -19,15 +19,15 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print('我是setUpclass，我位于所有用例的开始（只执行一次）')
-        adb_connect(devices_info_oppo['udid'])                      #连接wifi调试
-        huanxing_screen(devices_info_oppo['udid'])                  #唤醒屏幕
-        sildes(devices_info_oppo['udid'],360, 1400, 360, 1300, 50)  #adb向上滑屏
-        uninstall_app(devices_info_oppo['udid'],devices_info_oppo['appPackage'])#预先卸载app包
+        adb_connect(devices_info_tur['udid'])                      #连接wifi调试
+        huanxing_screen(devices_info_tur['udid'])                  #唤醒屏幕
+        sildes(devices_info_tur['udid'],360, 1400, 360, 1300, 50)  #adb向上滑屏
+        uninstall_app(devices_info_tur['udid'],devices_info_tur['appPackage'])#预先卸载app包
         appium_start('127.0.0.1', port_oppo)                        #启动appium服务
     def setUp(self):
         '''每条testcase执行前初始化'''
         print('testcase begin')
-        self.driver=devices_object_oppo.init_devices(port_oppo, devices_info_oppo)
+        self.driver=devices_object_oppo.init_devices(port_oppo, devices_info_tur)
         #设置隐式等待为 10s,一旦设置了隐式等待，它则会在整个Web Driver对象的实例声明周期中。
         self.driver.implicitly_wait(10)
         swipeup(self.driver,1000)
@@ -182,7 +182,7 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         print("testcase done")
     @classmethod
     def tearDownClass(cls):
-        adb_disconnect(devices_info_oppo['udid'])
+        adb_disconnect(devices_info_tur['udid'])
         appium_stop(port_oppo)
         print('我是tearDownClass，我位于所有用例运行的结束（只执行一次）')
 

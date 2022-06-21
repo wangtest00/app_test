@@ -8,8 +8,8 @@ appNo='104'
 appName=applist[appNo]
 
 port_oppo = 4733  # appium和driver端口号
-devices_object_oppo = InitDevices(devices_path+'/devices_tur.yaml', 'oppo')
-devices_info_oppo = devices_object_oppo.read_devices()
+devices_tur = InitDevices(devices_path+'/devices_tur.yaml', 'oppo')
+devices_info_tur = devices_tur.read_devices()
 port_moto = 4735
 devices_object_moto = InitDevices(devices_path+'/devices_tur.yaml', 'moto')
 devices_info_moto = devices_object_moto.read_devices()
