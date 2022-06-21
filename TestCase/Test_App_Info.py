@@ -10,7 +10,6 @@ class App(object):
 
     def launchApp(self,udid,packageName,appActivity):
         cmd='adb -s '+udid+' shell am start -W -n '+packageName+'/'+appActivity
-        print(cmd)
         self.content=popen(cmd).read()
         #print('launchApp响应=',self.content)
 
@@ -62,7 +61,6 @@ class ControllerForCpu(object):
         self.counter=count
         self.alldata=[('timestamp','cpustatus')]
     def testProcess(self,udid,packageName):
-        print('adb -s '+udid+' shell dumpsys cpuinfo | findstr '+packageName)
         result=popen('adb -s '+udid+' shell dumpsys cpuinfo | findstr '+packageName).read()
         print(result)
         cpuValue=result.split('%')[0]
@@ -97,12 +95,11 @@ class ControllerForMeminfo(object): #内存
         else:
             for line in data:
                 if 'TOTAL PSS' in line:
-                    print(line)
                     totalPSS=line.split(':')[1]
-                    print(totalPSS[:-21])
+                    #print(totalPSS[:-21])
                 elif 'Activities' in line:
                     Activities=line.split(':')[2]
-                    print(Activities)
+                   # print(Activities)
                 else:
                     pass
             currentTime=self.getCurrentTime()
