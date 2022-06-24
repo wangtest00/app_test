@@ -7,20 +7,9 @@ from app.grab_data_fr import *
 from app.appium_adb import *
 from app.swipe_test import *
 from app.initDevices import *
-from data.common_path import *
-import warnings
+from data.path_fr import *
 
-# PATH = lambda p: os.path.abspath(
-#     os.path.join(os.path.dirname(__file__), p)
-# )
-# port=4725  #appium和driver端口号
-# devices_object = InitDevices('../devices.yaml', 'vivo')
-# devices_info = devices_object.read_devices()
-# #增加重试连接次数
-# requests.DEFAULT_RETRIES = 5
-# #关闭多余的链接：requests使用了urllib3库，默认的http connection是keep-alive的，requests设置False关闭
-# s = requests.session()
-# s.keep_alive = False
+
 
 class Test_Install_Login_Fr(unittest.TestCase):
     @classmethod
@@ -29,7 +18,7 @@ class Test_Install_Login_Fr(unittest.TestCase):
         adb_connect(devices_info_vivo['udid'])     # 连接wifi调试
         huanxing_screen(devices_info_vivo['udid']) # 唤醒屏幕
         sildes(devices_info_vivo['udid'], 360, 1400, 360, 1000, 50)          # adb向上滑屏
-        #uninstall_app(devices_info_vivo['udid'], devices_info_vivo['appPackage'])  # 预先卸载app包
+        uninstall_app(devices_info_vivo['udid'], devices_info_vivo['appPackage'])  # 预先卸载app包
         appium_start('127.0.0.1', port_vivo)  # 启动appium服务
 
     def setUp(self):
@@ -38,24 +27,22 @@ class Test_Install_Login_Fr(unittest.TestCase):
         self.driver = devices_object_vivo.init_devices(port_vivo, devices_info_vivo)
         # 设置隐式等待为 10s,一旦设置了隐式等待，它则会在整个Web Driver对象的实例声明周期中。
         self.driver.implicitly_wait(10)
-        #warnings.simplefilter('ignore',ResourceWarning)
     def test_install_login(self):
         '''【FeriaRapida-android-VIVO】test_install_login-登录-设置密码,授权-正案例'''
-        #input1=self.driver.find_element()
         input1=self.driver.find_element_by_xpath(xp1)
         input1.send_keys('8585850000')
         self.driver.find_element_by_xpath(xp2)
-        # input2=self.driver.find_element_by_xpath(xp3)
-        # input2.send_keys('5555')
-        # time.sleep(3)
-        # input3=self.driver.find_element_by_xpath(xp4)
-        # input3.send_keys('123456')
-        # time.sleep(3)
-        # input4=self.driver.find_element_by_xpath(xp5)
-        # input4.send_keys('123456')
-        # time.sleep(3)
-        # shouquan_vivo(self.driver)
-        # time.sleep(3)
+        input2=self.driver.find_element_by_xpath(xp3)
+        input2.send_keys('5555')
+        time.sleep(3)
+        input3=self.driver.find_element_by_xpath(xp4)
+        input3.send_keys('123456')
+        time.sleep(3)
+        input4=self.driver.find_element_by_xpath(xp5)
+        input4.send_keys('123456')
+        time.sleep(3)
+        shouquan_vivo(self.driver)
+        time.sleep(3)
     def test_install_first_apply(self):
         '''【FeriaRapida-android-VIVO】test_install_first_apply-登录-设置密码，授权，进件5页面，检查数据抓取正案例'''
         registNo=str(random.randint(7000000000,9999999999)) #10位随机数作为手机号

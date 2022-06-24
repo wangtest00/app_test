@@ -7,7 +7,7 @@ from app.grab_data_fr import *
 from app.appium_adb import *
 from app.swipe_test import *
 from app.initDevices import *
-from data.common_path import *
+from data.commonPath import *
 import warnings
 from public.change_shurukaung import *
 from data.path_fr import *
