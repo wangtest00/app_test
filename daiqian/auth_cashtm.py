@@ -1,5 +1,5 @@
 import random,string,time,datetime
-from dataBase.dataBase_cashtm import *
+from dataBase.dataBase_tur import *
 from data.var_cashtm import *
 
 def certlist():
@@ -28,12 +28,6 @@ def logout(driver):
     driver.find_element_by_id('com.turrant:id/exit_layout').click()
     time.sleep(3)
     driver.find_element_by_id('com.turrant:id/btn_sure').click()
- #退出登录cashtm
-def logout_cashtm(driver):
-    driver.find_element_by_id('com.cashtm.andriod:id/radio_mine').click()
-    time.sleep(3)
-    driver.find_element_by_id('com.cashtm.andriod:id/exit_layout').click()
-    time.sleep(3)
-    driver.find_element_by_id('com.cashtm.andriod:id/btn_sure').click()
+
 if __name__ == '__main__':
     insert_white_list('7474742222')

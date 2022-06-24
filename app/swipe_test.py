@@ -17,8 +17,8 @@ def swipeup(driver,t):
     print("正在向上滑动..")
     screensize=getSize(driver)
     x1=int(screensize[0]*0.5)#x坐标
-    y1=int(screensize[1]*0.75)#起始y坐标
-    y2=int(screensize[1]*0.25)#终点y坐标
+    y1=int(screensize[1]*0.3)#起始y坐标
+    y2=int(screensize[1]*0.0)#终点y坐标
     driver.swipe(x1,y1,x1,y2,t)
 
 #屏幕向下滑动
@@ -58,4 +58,4 @@ def swiperight(driver,n,t):
 def sildes(udid,x,y,x1,y1,h):
     # 用adb模拟手指滑动屏幕
     os.system('adb -s '+udid+' shell input swipe {} {} {} {} {}'.format(x,y,x1,y1,h))
-    print("运行",udid,"%s y轴|%s x轴|%s y1轴|%s x1轴"%(x,y,x1,y1))
+    print("运行",udid,"%s x轴|%s y轴|%s x1轴|%s y1轴"%(x,y,x1,y1))

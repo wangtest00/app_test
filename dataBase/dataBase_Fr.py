@@ -1,12 +1,9 @@
 # coding:utf-8
-'''
-Created on 2018-11-26
-@author: 王爽
-'''
+
 import time
 import pymysql
+from data.var_fr import *
 from public.date_calculate import *
-from data.var_cashtm import *
 
 class DataBase():
     def __init__(self,witchdb):
@@ -66,7 +63,7 @@ class DataBase():
             print("调用存储过程异常：",e)
             return 0
     def call_many_proc(self):
-        proc=['proc_apr_loan_prod_sel','proc_apr_appr_all_user','proc_apr_appr_allocation','proc_apr_appr_allo_user_deal']
+        proc=['proc_apr_loan_prod_sel','proc_apr_appr_all_user','proc_apr_appr_allocation_control','proc_apr_appr_allo_user_deal']
         for proc in proc:
             self.call_proc(proc)
         self.closeDB()
@@ -74,7 +71,7 @@ class DataBase():
     def call_daily_important_batch(self,date1,date2):
         sql="delete from sys_batch_log;"
         DataBase(tez_db).executeUpdateSql(sql)
-        proc=['proc_sys_batch_log_start','proc_dc_flow_dtl','proc_fin_ad_reduce','proc_dc_flow_dtl_settle','proc_fin_ad_ovdu','proc_fin_ad_detail_dtl','proc_fin_ad_dtl','proc_lo_ovdu_dtl','proc_sys_batch_log_end']
+        proc=['proc_sys_batch_log_start','proc_fin_ad_ovdu','proc_fin_ad_detail_dtl','proc_fin_ad_dtl','proc_lo_ovdu_dtl','proc_sys_batch_log_end']
         date=create_assist_date(date1,date2)
         print(date)
         for j in range(len(date)):
@@ -85,3 +82,6 @@ class DataBase():
 
 
 #loanAmt='{0:f}'.format(t[0])#decimal转字符串
+
+if __name__ == '__main__':
+    DataBase(inter_db).call_daily_important_batch('20220208','20220208')

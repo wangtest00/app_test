@@ -1,13 +1,13 @@
 from appium import webdriver
 import unittest,os,requests,time
-from daiqian.base_india import *
+from daiqian.base_lp import *
 from daiqian.auth_tur import *
 from data.var_turrant import *
 from app.grab_data import *
 from app.appium_adb import *
 from app.swipe_test import *
 from app.initDevices import *
-from data.path_tur import *
+from data.common_path import *
 
 
 # #增加重试连接次数

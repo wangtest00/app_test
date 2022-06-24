@@ -154,15 +154,15 @@
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">开始时间</button>
-                <span class="text-dark">2022-05-25 01:07:00</span>
+                <span class="text-dark">2022-05-20 03:20:22</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">执行时间</button>
-                <span class="text-dark">246.19 S</span>
+                <span class="text-dark">285.76 S</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">用例总数</button>
-                <span class="text-dark">3</span>
+                <span class="text-dark">7</span>
             </li>
 
 
@@ -173,15 +173,15 @@
 
             <li class="list-group-item">
                 <button type="button" class="btn btn-success">成功用例</button>
-                <span class="text-success">3</span>
+                <span class="text-success">2</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-warning">失败用例</button>
-                <span class="text-warning">0</span>
+                <span class="text-warning">1</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-danger">错误用例</button>
-                <span class="text-danger">0</span>
+                <span class="text-danger">4</span>
             </li>
             <li class="list-group-item">
                 <button type="button" class="btn btn-secondary">跳过用例</button>
@@ -223,7 +223,11 @@
                     <select id="testClass">
                         <option>所有</option>
                         
-                            <option>Test_Install_First_Apply_cashTm_Oppo</option>
+                            <option>Test_Install_First_Apply_Tur_Hongmi</option>
+                        
+                            <option>Test_Install_First_Apply_Tur_Moto</option>
+                        
+                            <option>Test_Install_First_Apply_Tur_Oppo</option>
                         
                     </select>
 
@@ -251,12 +255,12 @@
             
                 <tr>
                     <td>1</td>
-                    <td class="Test_Install_First_Apply_cashTm_Oppo">Test_Install_First_Apply_cashTm_Oppo</td>
-                    <td>test_install_first_apply_102</td>
-                    <td>【cashTm-android-OPPO】test_install_first_apply-授权，进件5页面，检查数据抓取/埋点数据量-正案例</td>
-                    <td>1.91e+02s</td>
+                    <td class="Test_Install_First_Apply_Tur_Hongmi">Test_Install_First_Apply_Tur_Hongmi</td>
+                    <td>test_install_first_apply</td>
+                    <td>【turrant-android-HONGMI】test_install_first_apply-授权，进件5页面，检查数据抓取正案例</td>
+                    <td>91.4s</td>
                     
-                        <td class="text-success">成功</td>
+                        <td class="text-danger">错误</td>
                     
                     <td>
                         <button type="button" class="btn btn-success btn_info">查看详情</button>
@@ -268,16 +272,68 @@
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>testcase begin
-正在向上滑动..
-7257493219
-更新表字段成功 INSERT INTO `manage_need_loan`.`cu_white_list_dtl`(`ID`, `WHITE_LIST_TYPE`, `WHITE_LIST_VALUE`, `APP_NO`, `RISK_SCORE`, `USEABLE`, `VALID_START_DATE`, `VALID_END_DATE`, `ORIGIN`, `DESCRIPTION`, `REMARK`, `INST_TIME`, `INST_USER_NO`, `UPDT_TIME`, `UPDT_USER_NO`) 
-    VALUES ("165345885726045", '10140001', "7257493219", "102", "20150801", '10000001', '20220415', '20220715', 'auto_test', NULL, NULL, "2022-05-25 01:07:37", 'wangs@whalekun.com', "2022-05-25 01:07:37", 'wangs@whalekun.com');
-正在向上滑动..
-正在向上滑动..
-['31c120cb-e3bc-485b-addd-b33167366c5a', None, '102/20220525/7257493219/100700121653458969868.json', '31c120cb-e3bc-485b-addd-b33167366c5a', None]
-testcase done
-test_install_first_apply_102 (Test_Install_First_Apply_cashTm_Oppo.Test_Install_First_Apply_cashTm_Oppo)执行——>【通过】
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 60, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 676, in run
+    self._callTestMethod(testMethod)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 633, in _callTestMethod
+    method()
+</pre>
+                        
+
+                            <pre>  File "C:\Users\root\PycharmProjects\app_test\TestCase\Test_Install_First_Apply_Tur_Hongmi.py", line 86, in test_install_first_apply
+    self.driver.find_element_by_xpath(xp12).click()
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\webdriver.py", line 283, in find_element
+    return self.execute(RemoteCommand.FIND_ELEMENT, {'using': by, 'value': value})['value']
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
+    raise wde
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
+    super().check_response(response)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+</pre>
+                        
+
+                            <pre>selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+</pre>
+                        
+
+                            <pre>testcase setUp
+运行 192.168.20.136:5555 360 y轴|1400 x轴|360 y1轴|1300 x1轴
+appium -a 127.0.0.1 -p 4723
 </pre>
                         
                         
@@ -286,12 +342,12 @@ test_install_first_apply_102 (Test_Install_First_Apply_cashTm_Oppo.Test_Install_
             
                 <tr>
                     <td>2</td>
-                    <td class="Test_Install_First_Apply_cashTm_Oppo">Test_Install_First_Apply_cashTm_Oppo</td>
+                    <td class="Test_Install_First_Apply_Tur_Hongmi">Test_Install_First_Apply_Tur_Hongmi</td>
                     <td>test_install_login</td>
-                    <td>【cashTm-android-OPPO】test_install_login-授权,登录-正案例</td>
-                    <td>31.7s</td>
+                    <td>【turrant-android-HONGMI】test_install_login-授权,登录-正案例</td>
+                    <td>45.8s</td>
                     
-                        <td class="text-success">成功</td>
+                        <td class="text-danger">错误</td>
                     
                     <td>
                         <button type="button" class="btn btn-success btn_info">查看详情</button>
@@ -303,10 +359,68 @@ test_install_first_apply_102 (Test_Install_First_Apply_cashTm_Oppo.Test_Install_
                     <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
                         
 
-                            <pre>testcase begin
-正在向上滑动..
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 60, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 676, in run
+    self._callTestMethod(testMethod)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 633, in _callTestMethod
+    method()
+</pre>
+                        
+
+                            <pre>  File "C:\Users\root\PycharmProjects\app_test\TestCase\Test_Install_First_Apply_Tur_Hongmi.py", line 44, in test_install_login
+    self.driver.find_element_by_id('android:id/button1').click()  #允许读取短信
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\webdriver.py", line 283, in find_element
+    return self.execute(RemoteCommand.FIND_ELEMENT, {'using': by, 'value': value})['value']
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
+    raise wde
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
+    super().check_response(response)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+</pre>
+                        
+
+                            <pre>selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+</pre>
+                        
+
+                            <pre>testcase setUp
 testcase done
-test_install_login (Test_Install_First_Apply_cashTm_Oppo.Test_Install_First_Apply_cashTm_Oppo)执行——>【通过】
+test_install_frist_apply (Test_Install_First_Apply_Tur_Moto.Test_Install_First_Apply_Tur_Moto)执行——>【错误Error】
 </pre>
                         
                         
@@ -315,10 +429,263 @@ test_install_login (Test_Install_First_Apply_cashTm_Oppo.Test_Install_First_Appl
             
                 <tr>
                     <td>3</td>
-                    <td class="Test_Install_First_Apply_cashTm_Oppo">Test_Install_First_Apply_cashTm_Oppo</td>
-                    <td>test_jinzhi_shouquan</td>
-                    <td>【cashTm-android-OPPO】test_jinzhi_shouquan-禁止授权-正案例</td>
-                    <td>19.0s</td>
+                    <td class="Test_Install_First_Apply_Tur_Moto">Test_Install_First_Apply_Tur_Moto</td>
+                    <td>test_install_frist_apply</td>
+                    <td>【turrant-android-MOTO】test_install_first_apply-授权，进件5页面，检查数据抓取正案例</td>
+                    <td>93.2s</td>
+                    
+                        <td class="text-danger">错误</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 60, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 676, in run
+    self._callTestMethod(testMethod)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 633, in _callTestMethod
+    method()
+</pre>
+                        
+
+                            <pre>  File "C:\Users\root\PycharmProjects\app_test\TestCase\Test_Install_First_Apply_Tur_Moto.py", line 83, in test_install_frist_apply
+    self.driver.find_element_by_xpath(xp12).click()
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\webdriver.py", line 283, in find_element
+    return self.execute(RemoteCommand.FIND_ELEMENT, {'using': by, 'value': value})['value']
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
+    raise wde
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
+    super().check_response(response)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+</pre>
+                        
+
+                            <pre>selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+</pre>
+                        
+
+                            <pre>testcase setUp
+正在向上滑动..
+9605054424
+7096788924
+更新表字段成功 INSERT INTO `manage_need_loan`.`cu_white_list_dtl`(`ID`, `WHITE_LIST_TYPE`, `WHITE_LIST_VALUE`, `APP_NO`, `RISK_SCORE`, `USEABLE`, `VALID_START_DATE`, `VALID_END_DATE`, `ORIGIN`, `DESCRIPTION`, `REMARK`, `INST_TIME`, `INST_USER_NO`, `UPDT_TIME`, `UPDT_USER_NO`) 
+    VALUES ("165303488028573", '10140001', "7096788924", "104", "20150801", '10000001', '20220415', '20220715', 'auto_test', NULL, NULL, "2022-05-20 03:21:20", 'wangs@whalekun.com', "2022-05-20 03:21:20", 'wangs@whalekun.com');
+7555330468
+正在向上滑动..
+正在向上滑动..
+正在向上滑动..
+testcase done
+test_install_first_apply (Test_Install_First_Apply_Tur_Hongmi.Test_Install_First_Apply_Tur_Hongmi)执行——>【错误Error】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>4</td>
+                    <td class="Test_Install_First_Apply_Tur_Moto">Test_Install_First_Apply_Tur_Moto</td>
+                    <td>test_install_login</td>
+                    <td>【turrant-android-MOTO】test_install_login-授权,登录-正案例</td>
+                    <td>25.1s</td>
+                    
+                        <td class="text-danger">错误</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 60, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 676, in run
+    self._callTestMethod(testMethod)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 633, in _callTestMethod
+    method()
+</pre>
+                        
+
+                            <pre>  File "C:\Users\root\PycharmProjects\app_test\TestCase\Test_Install_First_Apply_Tur_Moto.py", line 36, in test_install_login
+    shouquan_moto(self.driver)
+</pre>
+                        
+
+                            <pre>  File "C:\Users\root\PycharmProjects\app_test\app\grab_data.py", line 40, in shouquan_moto
+    driver.find_element_by_id('com.android.permissioncontroller:id/permission_allow_foreground_only_button').click()
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 360, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\webdriver.py", line 283, in find_element
+    return self.execute(RemoteCommand.FIND_ELEMENT, {'using': by, 'value': value})['value']
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 31, in check_response
+    raise wde
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
+    super().check_response(response)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+</pre>
+                        
+
+                            <pre>selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+</pre>
+                        
+
+                            <pre>testcase setUp
+testcase done
+test_install_login (Test_Install_First_Apply_Tur_Hongmi.Test_Install_First_Apply_Tur_Hongmi)执行——>【错误Error】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>5</td>
+                    <td class="Test_Install_First_Apply_Tur_Oppo">Test_Install_First_Apply_Tur_Oppo</td>
+                    <td>test_install_first_apply</td>
+                    <td>【turrant-android-OPPO】test_install_first_apply-授权，进件5页面，检查数据抓取/埋点数据量-正案例</td>
+                    <td>2.09e+02s</td>
+                    
+                        <td class="text-warning">失败</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>testcase begin
+appium -a 127.0.0.1 -p 4725
+</pre>
+                        
+
+                            <pre>Traceback (most recent call last):
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 60, in testPartExecutor
+    yield
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 676, in run
+    self._callTestMethod(testMethod)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 633, in _callTestMethod
+    method()
+</pre>
+                        
+
+                            <pre>  File "C:\Users\root\PycharmProjects\app_test\TestCase\Test_Install_First_Apply_Tur_Oppo.py", line 166, in test_install_first_apply
+    self.assertEqual(cx_point_track_dtl_new(registNo),'26')
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 912, in assertEqual
+    assertion_func(first, second, msg=msg)
+</pre>
+                        
+
+                            <pre>  File "C:\Python38\lib\unittest\case.py", line 905, in _baseAssertEqual
+    raise self.failureException(msg)
+</pre>
+                        
+
+                            <pre>AssertionError: (24,) != '26'
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>6</td>
+                    <td class="Test_Install_First_Apply_Tur_Oppo">Test_Install_First_Apply_Tur_Oppo</td>
+                    <td>test_install_login</td>
+                    <td>【turrant-android-OPPO】test_install_login-授权,登录-正案例</td>
+                    <td>36.8s</td>
                     
                         <td class="text-success">成功</td>
                     
@@ -335,7 +702,36 @@ test_install_login (Test_Install_First_Apply_cashTm_Oppo.Test_Install_First_Appl
                             <pre>testcase begin
 正在向上滑动..
 testcase done
-test_jinzhi_shouquan (Test_Install_First_Apply_cashTm_Oppo.Test_Install_First_Apply_cashTm_Oppo)执行——>【通过】
+test_install_login (Test_Install_First_Apply_Tur_Oppo.Test_Install_First_Apply_Tur_Oppo)执行——>【通过】
+</pre>
+                        
+                        
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>7</td>
+                    <td class="Test_Install_First_Apply_Tur_Oppo">Test_Install_First_Apply_Tur_Oppo</td>
+                    <td>test_jinzhi_shouquan</td>
+                    <td>【turrant-android-OPPO】test_jinzhi_shouquan-禁止授权-正案例</td>
+                    <td>25.7s</td>
+                    
+                        <td class="text-success">成功</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-success btn_info">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all">
+                        
+
+                            <pre>testcase begin
+正在向上滑动..
+testcase done
+test_jinzhi_shouquan (Test_Install_First_Apply_Tur_Oppo.Test_Install_First_Apply_Tur_Oppo)执行——>【通过】
 </pre>
                         
                         
@@ -471,9 +867,9 @@ test_jinzhi_shouquan (Test_Install_First_Apply_cashTm_Oppo.Test_Install_First_Ap
                     show: false
                 },
                 data: [
-                    {value: 3, name: '通过'},
-                    {value: 0, name: '失败'},
-                    {value: 0, name: '错误'},
+                    {value: 2, name: '通过'},
+                    {value: 1, name: '失败'},
+                    {value: 4, name: '错误'},
                     {value: 0, name: '跳过'}
                 ]
             }
@@ -493,8 +889,8 @@ test_jinzhi_shouquan (Test_Install_First_Apply_cashTm_Oppo.Test_Install_First_Ap
             {
                 name: '测试结果',
                 type: 'gauge',
-                detail: {formatter: '100.00%'},
-                data: [{value: '100.00', name: '用例通过率'}],
+                detail: {formatter: '28.57%'},
+                data: [{value: '28.57', name: '用例通过率'}],
                 axisLine: {
                     lineStyle: {
                         color: [
