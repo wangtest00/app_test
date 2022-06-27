@@ -14,7 +14,7 @@ class App(object):
         #print('launchApp响应=',self.content)
 
     def stopApp(self):
-        cmd='adb shell input keyevent 3'        #发送一个keyevent事件，3代表点击手机上的“back”键，构造热启动
+        cmd='adb shell input keyevent 3' #发送一个keyevent事件，3代表点击手机上的“back”键，构造热启动
         self.content=popen(cmd).read()
         #print('stopApp响应=',self.content)
     def forceStopApp(self,packageName):
