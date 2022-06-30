@@ -57,6 +57,7 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         '''【turrant-android-OPPO】test_install_first_apply-授权，进件5页面，检查数据抓取/埋点数据量-正案例'''
         shouquan_oppo(self.driver)
         time.sleep(3)
+        print(self.driver.current_activity)
         registNo=str(random.randint(7000000000,9999999999)) #10位随机数作为手机号
         print(registNo)
         insert_white_list(registNo)
@@ -67,6 +68,7 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         self.driver.find_element_by_id('com.turrant:id/login_btn').click()
         self.driver.implicitly_wait(10)
         self.driver.find_element_by_id('com.turrant:id/loan_btn').click()  # step1点击申请贷款按钮,进入实名认证页面
+        print(self.driver.current_activity)
         self.driver.find_element_by_xpath(xp1).send_keys('wang shuang')
         self.driver.find_element_by_xpath(xp2).send_keys('test')
         self.driver.find_element_by_xpath(xp3).send_keys('android')
@@ -175,7 +177,7 @@ class Test_Install_First_Apply_Tur_Oppo(unittest.TestCase):
         for i in range(len(grab_data)):
             self.assertIsNotNone(grab_data[i])
         time.sleep(3)
-        self.assertEqual(cx_point_track_dtl_new(registNo),'27')
+        self.assertEqual(cx_point_track_dtl_new(registNo),27)
         logout(self.driver)
     def tearDown(self):
         self.driver.quit()
