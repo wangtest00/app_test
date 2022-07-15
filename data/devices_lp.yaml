@@ -1,0 +1,11 @@
+hongmi:
+  appActivity: com.lanaplus.mx.MainActivity
+  appPackage: com.lanaplus.mx
+  app: E:\app\lanaplus-1.4.2(142)-05-06-16-35-release.apk
+  deviceName: HongMi
+  platFormVersion: 11
+  platformName: Android
+  resetKeyboard: false
+  noReset: false
+  unicodeKeyboard: false
+  udid: 192.168.20.211:5555

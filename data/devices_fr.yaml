@@ -30,4 +30,4 @@ hongmi:
   resetKeyboard: false
   noReset: false
   unicodeKeyboard: false
-  udid: 192.168.20.211:5555
+  udid: 192.168.20.210:5555

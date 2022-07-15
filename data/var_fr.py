@@ -10,8 +10,9 @@ from app.initDevices import *
 inter_db='mex_pdl_loan'
 prodNo='25002400'#多期50121401
 appNo='202'
-applist={'201':'LanaPlus','202':'FeriaRapida'}
-appName=applist[appNo]
+appName='FeriaRapida'
+# applist={'201':'LanaPlus','202':'FeriaRapida'}
+# appName=applist[appNo]
 
 port_vivo = 4733  # appium和driver端口号
 devices_object_vivo = InitDevices(devices_path+'/devices_fr.yaml', 'vivo')

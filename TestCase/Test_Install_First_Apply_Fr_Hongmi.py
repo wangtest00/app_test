@@ -34,7 +34,7 @@ class Test_Install_Login_Fr(unittest.TestCase):
         '''【FeriaRapida-android-HongMi】test_install_login-新用户登录-设置密码,授权-正案例'''
         # 读取设备登录google play的手机号
         self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
-        registNo = str(random.randint(7000000000,9999999999))  # 10位随机数作为手机号
+        registNo = str(random.randint(1000000000,1999999999))  # 10位随机数作为手机号
         code = compute_code(registNo)  # 计算验证码
         mima = "123456"  # 密码
         change_shuru(self.driver, xp1, registNo)
@@ -53,7 +53,7 @@ class Test_Install_Login_Fr(unittest.TestCase):
         '''【FeriaRapida-android-HongMi】test_install_login_jinzhi_shouquan-新用户登录-设置密码,禁止授权-正案例'''
         # 读取设备登录google play的手机号
         self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
-        registNo = str(random.randint(7000000000, 9999999999))  # 10位随机数作为手机号
+        registNo = str(random.randint(1000000000, 1999999999))  # 10位随机数作为手机号
         code = compute_code(registNo)  # 计算验证码
         mima = "123456"  # 密码
         change_shuru(self.driver, xp1, registNo)
@@ -95,7 +95,7 @@ class Test_Install_Login_Fr(unittest.TestCase):
         '''【FeriaRapida-android-HongMi】test_install_login_first_apply-新客登录-设置密码，授权，进件4页面-绑卡，检查数据抓取正案例'''
         # 读取设备登录google play的手机号
         self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
-        registNo = str(random.randint(7000000000,9999999999))  # 10位随机数作为手机号
+        registNo = str(random.randint(1000000000,1999999999))  # 10位随机数作为手机号
         print(registNo)
         code = compute_code(registNo)  # 计算验证码
         mima = "123456"  # 密码
@@ -275,7 +275,7 @@ class Test_Install_Login_Fr(unittest.TestCase):
         '''【FeriaRapida-android-HongMi】test_install_login_fankui-新用户登录-反馈信息-正案例'''
         # 读取设备登录google play的手机号
         self.driver.find_element_by_id("com.google.android.gms:id/cancel").click()  # 点击以上都不是
-        registNo = str(random.randint(7000000000, 9999999999))  # 10位随机数作为手机号
+        registNo = str(random.randint(1000000000, 1999999999))  # 10位随机数作为手机号
         code = compute_code(registNo)  # 计算验证码
         mima = "123456"  # 密码
         detalls = "testtest"
