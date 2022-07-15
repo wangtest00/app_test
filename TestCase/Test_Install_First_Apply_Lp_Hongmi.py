@@ -260,8 +260,10 @@ class Test_Install_Login_Lp(unittest.TestCase):
         # self.driver.find_element_by_xpath(xp70).click()
         # 获取还款方式
         self.driver.find_element_by_xpath(xp71).click()
+        time.sleep(3)
         # 默认选择STP还款
         self.driver.find_element_by_xpath(xp73).click()
+        time.sleep(3)
         #判断进入stp还款信息页面
         self.assertTrue(self.driver.find_element_by_xpath(xp74).is_displayed())
     # def test_install_login_quxiaorili(self):
@@ -359,5 +361,5 @@ class Test_Install_Login_Lp(unittest.TestCase):
         appium_stop(port_hongmi)
         print('我是tearDownClass，我位于所有用例运行的结束')
 
-if __name__ == '__main__':
+if __name__ == '__main__ ':
     unittest.main()
