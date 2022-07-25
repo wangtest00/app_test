@@ -74,18 +74,20 @@ xp58='/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.
 xp59="//*[contains(@content-desc,'Okay')]"
 #xp60="//*[contains(@text,'138, CLABE(18 dígitos)]"
 xp60='/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.widget.EditText[2]'
-xp61='//android.widget.Button[@content-desc="Cancelar"]'
-xp62='//android.widget.Button[@content-desc="Continuar"]'
-xp63="//*[contains(@text,'Confirmar)]"
+xp61="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.widget.EditText[1]"
+xp62='//android.widget.Button[@content-desc="Cancelar"]'
+xp63='//android.widget.Button[@content-desc="Continuar"]'
+xp64="//*[contains(@content-desc,'Confirmar')]"
+#xp64='//android.widget.Button[@content-desc=" Confirmar "]'
 
 
 
 #待审批入口--填写邮箱
-xp64='//android.widget.Button[@content-desc="Completar Información"]'
-xp65='//android.widget.ImageView[@content-desc="Información de correo"]'
-xp66="//*[contains(@text,'Por favor, ingrese su correo electrónico.')]"
-xp67='//android.widget.Button[@content-desc="Confirmar"]'
-xp68="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button"
+xp65='//android.widget.Button[@content-desc="Completar Información"]'
+xp66='//android.widget.ImageView[@content-desc="Información de correo"]'
+xp67="//*[contains(@text,'Por favor, ingrese su correo electrónico.')]"
+xp68='//android.widget.Button[@content-desc="Confirmar"]'
+xp69="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button"
 
 
 #放款成功页面，点击按钮去获取账单信息

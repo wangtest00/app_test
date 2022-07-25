@@ -133,8 +133,9 @@ class Test_Install_Login_Lp(unittest.TestCase):
         change_shuru(self.driver, xp19, 'this is Numero exterior')  # 室外号码
         change_shuru(self.driver, xp20, 'this is Colonia')  # 市郊
         change_shuru(self.driver, xp21, postal)  # 邮政编码
-        change_shuru(self.driver, xp22, 'this is Delegaion o Municipio')  # 代表团或市政府
+        time.sleep(2)
         swipeup(self.driver, 1000)
+        change_shuru(self.driver, xp22, 'this is Delegaion o Municipio')  # 代表团或市政府
         self.driver.find_element_by_xpath(xp23).click()  # 州
         time.sleep(3)
         self.driver.find_element_by_xpath(xp24).click()  # 点击ok
@@ -181,29 +182,29 @@ class Test_Install_Login_Lp(unittest.TestCase):
         self.driver.find_element_by_xpath(xp55).click()  # 点击ok
         self.driver.find_element_by_xpath(xp56).click()  # 取消去反馈
         time.sleep(4)
-        # self.driver.find_element_by_xpath(xp57).click()  # 点击继续进入银行卡页面
-        # time.sleep(3)
-        # self.driver.find_element_by_xpath(xp58).click()  # 点击银行卡机构
-        # self.driver.find_element_by_xpath(xp59).click()  # 点击ok
-        # time.sleep(3)
-        # change_shuru(self.driver, xp60, bankNo)  # 输入银行卡卡号
-        # time.sleep(3)
-        # self.driver.find_element_by_xpath(xp58).click()
-        # self.driver.find_element_by_xpath(xp61).click()
-        # time.sleep(2)
-        # self.driver.find_element_by_xpath(xp62).click()  # 点击提交
-        # time.sleep(3)
-        # self.driver.find_element_by_xpath(xp63).click()  # 点击确定
-        # time.sleep(3)
-        # self.driver.find_element_by_xpath(xp64).click()  # 待审批--填写邮箱
-        # time.sleep(3)
-        # self.driver.find_element_by_xpath(xp65).click() # 邮箱入口
-        # self.driver.find_element_by_id('com.google.android.gms:id/cancel').click() # 点击以上都不是
-        # change_shuru(self.driver, xp66, "test@gmail.com")  # 填写邮箱
-        # time.sleep(3)
-        # self.driver.find_element_by_xpath(xp67).click()  # 点击确认
-        # time.sleep(3)
-        # self.driver.find_element_by_xpath(xp68).click()  # 点击返回按钮
+        self.driver.find_element_by_xpath(xp57).click()  # 点击继续进入银行卡页面
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp58).click()  # 点击银行卡机构
+        self.driver.find_element_by_xpath(xp59).click()  # 点击ok
+        time.sleep(3)
+        change_shuru(self.driver, xp60, bankNo)  # 输入银行卡卡号
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp61).click()
+        self.driver.find_element_by_xpath(xp62).click()
+        time.sleep(2)
+        self.driver.find_element_by_xpath(xp63).click()  # 点击提交
+        time.sleep(8)
+        self.driver.find_element_by_xpath(xp64).click()  # 点击确定
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp65).click()  # 待审批--填写邮箱
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp66).click() # 邮箱入口
+        self.driver.find_element_by_id('com.google.android.gms:id/cancel').click() # 点击以上都不是
+        change_shuru(self.driver, xp67, "test@gmail.com")  # 填写邮箱
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp68).click()  # 点击确认
+        time.sleep(3)
+        self.driver.find_element_by_xpath(xp69).click()  # 点击返回按钮
         # 校验抓取的5个数据不为空
         grab_data = cx_grab_data(registNo)
         for i in range(len(grab_data)):
